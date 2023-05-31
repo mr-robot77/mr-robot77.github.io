@@ -8,7 +8,6 @@ description: > # your text below (remove <br> elements if you don't need line br
   -Artificial Intelligence -Stocks & Cryptocurrency 
   <br><br>
   <a href="https://www.linkedin.com/in/saleh-abdnjd">View My LinkedIn Profile</a> 
-  <a href="https://github.com/mr-robot77">View My Github Profile</a> 
   
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
