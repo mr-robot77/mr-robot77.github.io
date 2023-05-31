@@ -4,6 +4,14 @@
 
 ### Category Name 1 
 
+I'm a Data Scientist with experience in the field of AI/ML Engineering.
+I have skills in data analysis, machine learning, and visualization,
+and I also with strong knowledge of Programming.
+I have worked on projects such as predicting stock prices,
+text-to-speech, and translating. I enjoy solving complex problems
+with data and exploring new ways.
+
+---
 [Project 1 Title](/sample_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
