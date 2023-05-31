@@ -1,0 +1,19 @@
+title: Saleh Abednezhad # your name (or website title) here
+logo: "/images/logo.png?raw=true" # your photo (or logo) here
+description: > # your text below (remove <br> elements if you don't need line breaks)
+  I'm a Data Scientist with experience in the field of AI/ML Engineering.
+  I have skills in data analysis, machine learning, and visualization, and I also with strong knowledge of Programming.
+  I have worked on projects such as predicting stock prices, text-to-speech, and translating.
+  I enjoy solving complex problems with data and exploring new ways. 
+  <br><br>
+  Skills:
+  -Python -SQL -Machine Learning -Deep Learning
+  Interests:
+  -Artificial Intelligence -Stocks & Cryptocurrency 
+  <br><br>
+  <a href="https://www.linkedin.com/in/saleh-abdnjd/">View My LinkedIn Profile</a> 
+  
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+- jekyll-remote-theme
+google_analytics: UA-000000-0 # your Google Analytics tracking ID here
