@@ -2,35 +2,33 @@
 
 ---
 
-### Category Name 1 
+### 💫 About Me:
 
-I'm a Data Scientist with experience in the field of AI/ML Engineering.
-I have skills in data analysis, machine learning, and visualization,
-and I also with strong knowledge of Programming.
-I have worked on projects such as predicting stock prices,
-text-to-speech, and translating. I enjoy solving complex problems
-with data and exploring new ways.
+I'm a curious and Passionate problem solver “Data Scientist” with experience in AI/ML Engineering. I have skills in data analysis, machine learning, and visualization, and I also have strong programming knowledge. Furthermore, I have worked on projects such as:
+- predicting stock & crypto prices, 
+- House Price prediction, 
+- Sales Prediction & Customer Analytics, 
+- and text-to-speech.
+
+I enjoy working and solving complex issues with large data, exploring new ways or pattern recognition among complex databases, and analyzing them. Also, I love working on emerging technology with analysis, prediction, and discovering the story behind the data.
 
 ---
-[Project 1 Title](/sample_page)
+### Top Projects:
+[Coinmarketcap Data Analysis & Visualizing](https://github.com/mr-robot77/Coinmarketcap)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
+[Cryptocurrency Data Analysis with Machine Learning](https://github.com/mr-robot77/Quera_G11-Project2)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Project 3 Title](http://example.com/)
+[Amazon Products Image Classification & Customer Reviews Sentiment Analysis](https://github.com/mr-robot77/Quera_G11-Project3)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
 
-### Category Name 2
+### Other Projects
 
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
+- [Sales Data Analysis](https://github.com/mr-robot77/Sales-Data-Analysis)
 
 ---
