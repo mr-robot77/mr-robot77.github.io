@@ -1,8 +1,7 @@
 title: Saleh Abednezhad # your name (or website title) here
 logo: "/images/profile-photo.jpg?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  Skills:
-  <br><br>
+  Skills:<br>
   -Python
   -SQL
   -Machine Learning
@@ -10,8 +9,7 @@ description: > # your text below (remove <br> elements if you don't need line br
   -Data Visualization
   <br><br>
   
-  Interests:
-  <br><br>
+  Interests:<br>
   -Artificial Intelligence
   -Stocks & Cryptocurrency
   -Data Science
