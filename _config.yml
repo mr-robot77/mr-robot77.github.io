@@ -3,6 +3,7 @@ logo: "/images/profile-photo.jpg?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   Skills:<br>
   - Python
+  - R
   - SQL
   - Machine Learning
   - Deep Learning
