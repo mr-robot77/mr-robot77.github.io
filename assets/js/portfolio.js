@@ -77,10 +77,17 @@
         catEl.textContent           = data.category       || '';
         catEl.style.backgroundColor = data.category_color || '#4e65fd';
 
-        /* Preview gradient */
+        /* Preview gradient with optional image */
         var previewEl          = document.getElementById('modal-preview');
         previewEl.style.background = data.gradient || '#4e65fd';
         previewEl.innerHTML    = '';
+        if (data.image) {
+          var img = document.createElement('img');
+          img.src = data.image;
+          img.alt = data.title || '';
+          img.className = 'cases__pic';
+          previewEl.appendChild(img);
+        }
 
         /* Tech tags */
         var detailsEl = document.getElementById('modal-details');

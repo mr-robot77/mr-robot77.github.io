@@ -109,8 +109,12 @@
                    data-project-id="{{ forloop.index0 }}"
                    aria-label="View details for {{ project.title }}">
                 <div class="box-item-card">
-                  <!-- Gradient preview thumbnail -->
-                  <div class="cases__preview" style="background: {{ project.gradient }};"></div>
+                  <!-- Gradient preview thumbnail with optional image -->
+                  <div class="cases__preview" style="background: {{ project.gradient }};">
+                    {% if project.image %}
+                    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="cases__pic">
+                    {% endif %}
+                  </div>
                   <!-- Card body -->
                   <div class="card-body">
                     <div class="category-badge" style="background-color: {{ project.category_color }};">
