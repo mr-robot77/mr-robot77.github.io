@@ -64,6 +64,7 @@
     ===================================================== */
     var modal      = document.getElementById('project-modal');
     var modalClose = document.getElementById('modal-close');
+    var modalGallery = document.getElementById('modal-gallery');
 
     if (modal && modalClose) {
 
@@ -79,14 +80,39 @@
 
         /* Preview gradient with optional image */
         var previewEl          = document.getElementById('modal-preview');
+        var primaryImage       = data.image || (data.images && data.images[0]);
         previewEl.style.background = data.gradient || '#4e65fd';
         previewEl.innerHTML    = '';
-        if (data.image) {
+        if (primaryImage) {
           var img = document.createElement('img');
-          img.src = data.image;
+          img.src = primaryImage;
           img.alt = data.title || '';
           img.className = 'cases__pic';
           previewEl.appendChild(img);
+        }
+
+        /* Gallery images */
+        if (modalGallery) {
+          modalGallery.innerHTML = '';
+          var galleryImages = [];
+          if (data.images && data.images.length) {
+            galleryImages = data.images;
+          } else if (primaryImage) {
+            galleryImages = [primaryImage];
+          }
+
+          if (galleryImages.length) {
+            modalGallery.style.display = 'grid';
+            galleryImages.forEach(function (src, idx) {
+              var galleryImg = document.createElement('img');
+              galleryImg.src = src;
+              var altTitle = data.title ? data.title + ' screenshot ' + (idx + 1) : 'Project screenshot';
+              galleryImg.alt = altTitle;
+              modalGallery.appendChild(galleryImg);
+            });
+          } else {
+            modalGallery.style.display = 'none';
+          }
         }
 
         /* Tech tags */

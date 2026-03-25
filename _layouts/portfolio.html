@@ -111,8 +111,14 @@
                 <div class="box-item-card">
                   <!-- Gradient preview thumbnail with optional image -->
                   <div class="cases__preview" style="background: {{ project.gradient }};">
-                    {% if project.image %}
-                    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="cases__pic">
+                    {% assign preview_image = project.image | default: project.images | first %}
+                    {% if preview_image %}
+                      {% if preview_image contains "://" %}
+                        {% assign preview_src = preview_image %}
+                      {% else %}
+                        {% assign preview_src = preview_image | relative_url %}
+                      {% endif %}
+                      <img src="{{ preview_src }}" alt="{{ project.title }}" class="cases__pic">
                     {% endif %}
                   </div>
                   <!-- Card body -->
@@ -157,6 +163,7 @@
           <div class="modal-category" id="modal-category"></div>
           <h2 class="modal-title" id="modal-title"></h2>
           <p class="modal-description" id="modal-description"></p>
+          <div class="modal-gallery" id="modal-gallery"></div>
           <div id="modal-details"></div>
           <a href="#" class="modal-link" id="modal-link" target="_blank" rel="noopener noreferrer">
             View Project&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i>
