@@ -60,6 +60,58 @@
     });
 
     /* =====================================================
+       Thumbnail Slideshow for Project Cards
+    ===================================================== */
+    document.querySelectorAll('.cases__preview').forEach(function (preview) {
+      var images = preview.querySelectorAll('.cases__pic');
+      var prevBtn = preview.querySelector('.slide-nav.prev');
+      var nextBtn = preview.querySelector('.slide-nav.next');
+
+      if (images.length <= 1) return; // No slideshow needed for single image
+
+      var currentIndex = 0;
+
+      function showSlide(index) {
+        images.forEach(function (img) { img.classList.remove('active'); });
+        images[index].classList.add('active');
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function (e) {
+          e.stopPropagation(); // Prevent opening modal
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          showSlide(currentIndex);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function (e) {
+          e.stopPropagation(); // Prevent opening modal
+          currentIndex = (currentIndex + 1) % images.length;
+          showSlide(currentIndex);
+        });
+      }
+
+      // Auto-advance slideshow every 3 seconds
+      var autoAdvance = setInterval(function () {
+        currentIndex = (currentIndex + 1) % images.length;
+        showSlide(currentIndex);
+      }, 3000);
+
+      // Pause auto-advance on hover
+      preview.addEventListener('mouseenter', function () {
+        clearInterval(autoAdvance);
+      });
+
+      preview.addEventListener('mouseleave', function () {
+        autoAdvance = setInterval(function () {
+          currentIndex = (currentIndex + 1) % images.length;
+          showSlide(currentIndex);
+        }, 3000);
+      });
+    });
+
+    /* =====================================================
        Project Detail Modal
     ===================================================== */
     var modal      = document.getElementById('project-modal');
@@ -108,6 +160,8 @@
               galleryImg.src = src;
               var altTitle = data.title ? data.title + ' screenshot ' + (idx + 1) : 'Project screenshot';
               galleryImg.alt = altTitle;
+              galleryImg.dataset.lightboxIndex = idx;
+              galleryImg.dataset.lightboxImages = JSON.stringify(galleryImages);
               modalGallery.appendChild(galleryImg);
             });
           } else {
@@ -185,6 +239,89 @@
       });
 
     } /* end if (modal && modalClose) */
+
+    /* =====================================================
+       Lightbox for Gallery Images
+    ===================================================== */
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var lightboxClose = document.getElementById('lightbox-close');
+    var lightboxPrev = document.getElementById('lightbox-prev');
+    var lightboxNext = document.getElementById('lightbox-next');
+    var currentLightboxImages = [];
+    var currentLightboxIndex = 0;
+
+    function openLightbox(images, index) {
+      currentLightboxImages = images;
+      currentLightboxIndex = index;
+      lightboxImg.src = images[index];
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      // Show/hide navigation buttons based on image count
+      if (images.length <= 1) {
+        lightboxPrev.style.display = 'none';
+        lightboxNext.style.display = 'none';
+      } else {
+        lightboxPrev.style.display = 'block';
+        lightboxNext.style.display = 'block';
+      }
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function showLightboxImage(index) {
+      currentLightboxIndex = index;
+      lightboxImg.src = currentLightboxImages[index];
+    }
+
+    if (lightbox && lightboxClose) {
+      lightboxClose.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', function () {
+          var newIndex = (currentLightboxIndex - 1 + currentLightboxImages.length) % currentLightboxImages.length;
+          showLightboxImage(newIndex);
+        });
+      }
+
+      if (lightboxNext) {
+        lightboxNext.addEventListener('click', function () {
+          var newIndex = (currentLightboxIndex + 1) % currentLightboxImages.length;
+          showLightboxImage(newIndex);
+        });
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (!lightbox.classList.contains('active')) return;
+
+        if (e.key === 'Escape') {
+          closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+          var newIndex = (currentLightboxIndex - 1 + currentLightboxImages.length) % currentLightboxImages.length;
+          showLightboxImage(newIndex);
+        } else if (e.key === 'ArrowRight') {
+          var newIndex = (currentLightboxIndex + 1) % currentLightboxImages.length;
+          showLightboxImage(newIndex);
+        }
+      });
+
+      // Delegate click events for dynamically created gallery images
+      document.addEventListener('click', function (e) {
+        if (e.target.matches('.modal-gallery img')) {
+          var index = parseInt(e.target.dataset.lightboxIndex, 10);
+          var images = JSON.parse(e.target.dataset.lightboxImages);
+          openLightbox(images, index);
+        }
+      });
+    }
 
   });
 })();
