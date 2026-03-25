@@ -109,16 +109,28 @@
                    data-project-id="{{ forloop.index0 }}"
                    aria-label="View details for {{ project.title }}">
                 <div class="box-item-card">
-                  <!-- Gradient preview thumbnail with optional image -->
-                  <div class="cases__preview" style="background: {{ project.gradient }};">
-                    {% assign preview_image = project.image | default: project.images | first %}
-                    {% if preview_image %}
-                      {% if preview_image contains "://" %}
-                        {% assign preview_src = preview_image %}
-                      {% else %}
-                        {% assign preview_src = preview_image | relative_url %}
+                  <!-- Gradient preview thumbnail with slideshow -->
+                  <div class="cases__preview" style="background: {{ project.gradient }};" data-project-index="{{ forloop.index0 }}">
+                    {% if project.images and project.images.size > 0 %}
+                      {% for img in project.images %}
+                        {% if img contains "://" %}
+                          {% assign img_src = img %}
+                        {% else %}
+                          {% assign img_src = img | relative_url %}
+                        {% endif %}
+                        <img src="{{ img_src }}" alt="{{ project.title }}" class="cases__pic {% if forloop.first %}active{% endif %}" data-slide-index="{{ forloop.index0 }}">
+                      {% endfor %}
+                      {% if project.images.size > 1 %}
+                        <button class="slide-nav prev" aria-label="Previous image">&lt;</button>
+                        <button class="slide-nav next" aria-label="Next image">&gt;</button>
                       {% endif %}
-                      <img src="{{ preview_src }}" alt="{{ project.title }}" class="cases__pic">
+                    {% elsif project.image %}
+                      {% if project.image contains "://" %}
+                        {% assign preview_src = project.image %}
+                      {% else %}
+                        {% assign preview_src = project.image | relative_url %}
+                      {% endif %}
+                      <img src="{{ preview_src }}" alt="{{ project.title }}" class="cases__pic active">
                     {% endif %}
                   </div>
                   <!-- Card body -->
@@ -170,6 +182,16 @@
           </a>
         </div>
       </div>
+    </div>
+
+    <!-- ===== Lightbox for enlarged images ===== -->
+    <div class="lightbox-overlay" id="lightbox">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+      <button class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous image">&lt;</button>
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Enlarged view">
+      </div>
+      <button class="lightbox-nav next" id="lightbox-next" aria-label="Next image">&gt;</button>
     </div>
 
     <!-- ===== Scripts ===== -->
