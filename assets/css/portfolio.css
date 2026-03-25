@@ -1,0 +1,481 @@
+/* ============================================================
+   portfolio.css — Custom portfolio styles
+   Adds About & Projects sections with card layout and modals,
+   styled after the hluebbering.github.io reference portfolio.
+   ============================================================ */
+
+/* ---------- CSS custom properties ---------- */
+:root {
+  --pf-font: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --pf-bg: #f5f6fa;
+  --pf-card: #ffffff;
+  --pf-border: #e4e7ef;
+  --pf-text: #1a1d2e;
+  --pf-muted: #6b7280;
+  --pf-accent: #4e65fd;
+  --pf-accent-dark: #3a51e0;
+  --pf-radius: 12px;
+  --pf-radius-sm: 8px;
+  --pf-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  --pf-shadow-hover: 0 8px 32px rgba(0,0,0,0.14);
+  --pf-transition: 0.25s ease;
+}
+
+/* ---------- Section Tab Navigation ---------- */
+.section-nav {
+  margin: 18px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-tab {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 14px;
+  border-radius: var(--pf-radius-sm);
+  text-decoration: none;
+  color: var(--pf-muted);
+  font-family: var(--pf-font);
+  font-size: 0.88em;
+  font-weight: 500;
+  transition: var(--pf-transition);
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+.nav-tab:hover {
+  color: var(--pf-accent);
+  background: rgba(78, 101, 253, 0.07);
+  text-decoration: none;
+}
+
+.nav-tab.active {
+  color: var(--pf-accent);
+  background: rgba(78, 101, 253, 0.1);
+  font-weight: 600;
+}
+
+.nav-tab i {
+  font-size: 0.9em;
+  width: 14px;
+  text-align: center;
+}
+
+/* ---------- Portfolio Sections ---------- */
+.portfolio-section {
+  display: none;
+  animation: pf-fade-in 0.3s ease;
+}
+
+.portfolio-section.active-section {
+  display: block;
+}
+
+@keyframes pf-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Section Card Wrapper ---------- */
+.section-card {
+  background: var(--pf-card);
+  border-radius: var(--pf-radius);
+  padding: 28px 30px 32px;
+  box-shadow: var(--pf-shadow);
+  margin-top: 10px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--pf-border);
+}
+
+.section-header h2 {
+  margin: 0;
+  font-family: var(--pf-font);
+  font-size: 1.35em;
+  font-weight: 700;
+  color: var(--pf-text);
+}
+
+.section-icon {
+  color: var(--pf-accent);
+  font-size: 1.1em;
+}
+
+/* ---------- About Section ---------- */
+.about-content {
+  font-family: var(--pf-font);
+  font-size: 0.93em;
+  line-height: 1.75;
+  color: var(--pf-text);
+}
+
+.about-content h3 {
+  color: var(--pf-text);
+  font-size: 1em;
+  font-weight: 600;
+  margin: 20px 0 8px;
+}
+
+.about-content ul {
+  padding-left: 20px;
+  margin: 4px 0 12px;
+}
+
+.about-content ul li {
+  margin-bottom: 3px;
+}
+
+.about-content p:first-child {
+  margin-top: 0;
+}
+
+/* ---------- Filter Menu ---------- */
+.filter-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.f_btn label {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--pf-font);
+  font-size: 0.8em;
+  font-weight: 500;
+  background: var(--pf-bg);
+  color: var(--pf-muted);
+  border: 1.5px solid var(--pf-border);
+  transition: var(--pf-transition);
+  user-select: none;
+}
+
+.f_btn label:hover {
+  background: rgba(78, 101, 253, 0.07);
+  border-color: var(--pf-accent);
+  color: var(--pf-accent);
+}
+
+.f_btn input[type="radio"] {
+  display: none;
+}
+
+.f_btn.active label {
+  background: var(--pf-accent);
+  border-color: var(--pf-accent);
+  color: #fff;
+}
+
+/* ---------- Projects Grid ---------- */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+/* ---------- Project Card ---------- */
+.my-item {
+  cursor: pointer;
+  outline: none;
+}
+
+.my-item.hidden {
+  display: none;
+}
+
+.my-item:focus-visible .box-item-card {
+  box-shadow: 0 0 0 3px var(--pf-accent);
+}
+
+.box-item-card {
+  border-radius: var(--pf-radius);
+  overflow: hidden;
+  background: var(--pf-card);
+  box-shadow: var(--pf-shadow);
+  transition: transform var(--pf-transition), box-shadow var(--pf-transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.my-item:hover .box-item-card {
+  box-shadow: var(--pf-shadow-hover);
+  transform: translateY(-3px);
+}
+
+.cases__preview {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 1px;
+  box-shadow: inset 0px -4px 2px rgba(243,245,246,0.35);
+}
+
+.cases__pic {
+  max-height: 100%;
+  max-width: 100%;
+  padding: 10px;
+  object-fit: contain;
+}
+
+.card-body {
+  padding: 15px 16px 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 3px 11px;
+  border-radius: 20px;
+  font-size: 0.7em;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 9px;
+  font-family: var(--pf-font);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.proj-title {
+  font-family: var(--pf-font);
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--pf-text);
+  margin: 0 0 7px;
+  line-height: 1.4;
+}
+
+.about-project {
+  font-family: var(--pf-font);
+  font-size: 0.8em;
+  color: var(--pf-muted);
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+.card-details {
+  font-size: 0.78em;
+  color: var(--pf-muted);
+  font-family: var(--pf-font);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-details i {
+  font-size: 0.9em;
+}
+
+/* ---------- Project Detail Modal ---------- */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 12, 28, 0.65);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-overlay.open {
+  display: flex;
+  animation: pf-fade-in 0.2s ease;
+}
+
+.modal-container {
+  background: #fff;
+  border-radius: var(--pf-radius);
+  max-width: 580px;
+  width: 100%;
+  max-height: 92vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.28);
+  animation: modal-slide-up 0.28s ease;
+}
+
+@keyframes modal-slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: rgba(255,255,255,0.85);
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1.1em;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--pf-transition);
+  line-height: 1;
+  color: var(--pf-text);
+}
+
+.modal-close:hover {
+  background: rgba(255,255,255,1);
+}
+
+.modal-preview {
+  height: 190px;
+  border-radius: var(--pf-radius) var(--pf-radius) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.modal-preview img {
+  max-height: 100%;
+  max-width: 85%;
+  object-fit: contain;
+  padding: 16px;
+}
+
+.modal-body {
+  padding: 22px 26px 26px;
+}
+
+.modal-category {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.72em;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: var(--pf-font);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.modal-title {
+  font-family: var(--pf-font);
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: var(--pf-text);
+  line-height: 1.35;
+}
+
+.modal-description {
+  font-family: var(--pf-font);
+  font-size: 0.88em;
+  line-height: 1.72;
+  color: var(--pf-text);
+  margin-bottom: 14px;
+}
+
+.modal-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.tech-tag {
+  padding: 3px 11px;
+  background: var(--pf-bg);
+  border: 1px solid var(--pf-border);
+  border-radius: 6px;
+  font-size: 0.78em;
+  color: var(--pf-text);
+  font-family: var(--pf-font);
+  font-weight: 500;
+}
+
+.modal-details-list {
+  padding-left: 18px;
+  margin: 0 0 20px;
+}
+
+.modal-details-list li {
+  font-family: var(--pf-font);
+  font-size: 0.84em;
+  color: var(--pf-muted);
+  line-height: 1.7;
+  margin-bottom: 2px;
+}
+
+.modal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  background: var(--pf-accent);
+  color: #fff !important;
+  border-radius: var(--pf-radius-sm);
+  text-decoration: none !important;
+  font-family: var(--pf-font);
+  font-size: 0.88em;
+  font-weight: 600;
+  transition: background var(--pf-transition), transform var(--pf-transition);
+}
+
+.modal-link:hover {
+  background: var(--pf-accent-dark);
+  transform: translateY(-1px);
+}
+
+/* ---------- Profile photo override ---------- */
+header img.profile-photo {
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border: 3px solid var(--pf-accent);
+  display: block;
+  margin: 8px 0 12px;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 900px) {
+  .section-nav {
+    flex-direction: row;
+  }
+  .nav-tab {
+    flex: 1;
+    justify-content: center;
+  }
+  .cards-container {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .section-card {
+    padding: 20px 16px 24px;
+  }
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+  .modal-body {
+    padding: 18px 18px 22px;
+  }
+}
