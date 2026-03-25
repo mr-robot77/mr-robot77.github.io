@@ -1,39 +1,23 @@
-## Portfolio
-
+---
+layout: portfolio
 ---
 
-### 💫 About Me:
+I'm a curious and passionate problem solver — a **Data Scientist** with experience in AI/ML Engineering. I have strong skills in data analysis, machine learning, and visualization, backed by solid programming knowledge.
 
-I'm a curious and Passionate problem solver “Data Scientist” with experience in AI/ML Engineering. I have skills in data analysis, machine learning, and visualization, and I also have strong programming knowledge. Furthermore, I have worked on projects such as:
-- predicting stock & crypto prices, 
-- House Price prediction, 
-- Sales Prediction & Customer Analytics, 
-- and text-to-speech.
+### Skills
 
-I enjoy working and solving complex issues with large data, exploring new ways or pattern recognition among complex databases, and analyzing them. Also, I love working on emerging technology with analysis, prediction, and discovering the story behind the data.
+- Python, R, SQL
+- Machine Learning & Deep Learning
+- Data Visualization
+- Natural Language Processing (NLP)
 
----
-### Top Projects:
-[Coinmarketcap Data Analysis & Visualizing](https://github.com/mr-robot77/Coinmarketcap)
-<img src="https://github.com/mr-robot77/Coinmarketcap/blob/main/images/photo_5767218537188932884_y.png?raw=true"/>
-<img src="https://github.com/mr-robot77/Coinmarketcap/blob/main/images/photo_5767218537188932887_y.png?raw=true"/>
+### Interests
 
----
-[Cryptocurrency Data Analysis with Machine Learning](https://github.com/mr-robot77/Quera_G11-Project2)
-<img src="https://github.com/mr-robot77/Quera_G11-Project2/blob/main/images/prediction/Generating%20trading%20signals%20with%20ema.png?raw=true"/>
-<img src="https://github.com/mr-robot77/Quera_G11-Project2/blob/main/images/clustering_k-means/k-means9.png?raw=true"/>
+- Artificial Intelligence
+- Stocks & Cryptocurrency
+- Data Science & Big Data
+- Pattern Recognition in Complex Datasets
 
----
-[Amazon Products Image Classification & Customer Reviews Sentiment Analysis](https://github.com/mr-robot77/Quera_G11-Project3)
-<img src="https://github.com/mr-robot77/Quera_G11-Project3/blob/main/images/P2/Q1/Word_Cloud_reviews_overall_rating_12.png?raw=true"/>
-<img src="https://github.com/mr-robot77/Quera_G11-Project3/blob/main/images/P2/Q1/Top_10_brands.png?raw=true"/>
+I enjoy working on complex problems with large datasets, exploring pattern recognition, and discovering the stories hidden in data. I love working on emerging technologies and turning raw data into actionable insights.
 
----
-
-### Other Projects
-
-- [Sales Data Analysis](https://github.com/mr-robot77/Sales-Data-Analysis)
-<img src="https://github.com/mr-robot77/Sales-Data-Analysis/blob/main/images/Geo.PNG?raw=true"/>
-<img src="https://github.com/mr-robot77/Sales-Data-Analysis/blob/main/images/Sales.PNG?raw=true"/>
-
----
+[View My LinkedIn Profile](https://www.linkedin.com/in/saleh-abdnjd)

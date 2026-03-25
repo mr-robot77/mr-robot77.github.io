@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% seo %}
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Minimal theme base CSS -->
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+
+    <!-- Portfolio custom CSS -->
+    <link rel="stylesheet" href="{{ "/assets/css/portfolio.css" | relative_url }}">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="wrapper">
+
+      <!-- ===== Sidebar / Header ===== -->
+      <header>
+        <h1>
+          <a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a>
+        </h1>
+
+        {% if site.logo %}
+          <img src="{{ site.logo | relative_url }}" alt="Profile Photo" class="profile-photo" />
+        {% endif %}
+
+        <p>{{ site.description | default: site.github.project_tagline }}</p>
+
+        {% if site.github.is_user_page %}
+        <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
+        {% endif %}
+
+        <!-- Section Tab Navigation -->
+        <nav class="section-nav" aria-label="Portfolio sections">
+          <a href="#about" class="nav-tab active" data-section="about">
+            <i class="fa-solid fa-user"></i> About
+          </a>
+          <a href="#projects" class="nav-tab" data-section="projects">
+            <i class="fa-solid fa-folder-open"></i> Projects
+          </a>
+        </nav>
+      </header>
+
+      <!-- ===== Main Content ===== -->
+      <section>
+
+        <!-- About Section -->
+        <div id="about-section" class="portfolio-section active-section">
+          <div class="section-card">
+            <div class="section-header">
+              <i class="fa-solid fa-user section-icon"></i>
+              <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+              {{ content }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div id="projects-section" class="portfolio-section">
+          <div class="section-card">
+            <div class="section-header">
+              <i class="fa-solid fa-folder-open section-icon"></i>
+              <h2>Projects</h2>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-menu filter-button-group" role="group" aria-label="Filter projects by category">
+              <div class="f_btn active">
+                <label>
+                  <input type="radio" name="fl_radio" value="all" checked>All
+                </label>
+              </div>
+              {% assign seen_slugs = "" %}
+              {% for project in site.data.projects %}
+                {% unless seen_slugs contains project.category_slug %}
+                  {% assign seen_slugs = seen_slugs | append: project.category_slug | append: "," %}
+                  <div class="f_btn">
+                    <label>
+                      <input type="radio" name="fl_radio" value="{{ project.category_slug }}">{{ project.category }}
+                    </label>
+                  </div>
+                {% endunless %}
+              {% endfor %}
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="cards-container" id="projects-grid">
+              {% for project in site.data.projects %}
+              <div class="my-item {{ project.category_slug }}"
+                   role="button"
+                   tabindex="0"
+                   data-project-id="{{ forloop.index0 }}"
+                   aria-label="View details for {{ project.title }}">
+                <div class="box-item-card">
+                  <!-- Gradient preview thumbnail -->
+                  <div class="cases__preview" style="background: {{ project.gradient }};"></div>
+                  <!-- Card body -->
+                  <div class="card-body">
+                    <div class="category-badge" style="background-color: {{ project.category_color }};">
+                      {{ project.category }}
+                    </div>
+                    <h2 class="proj-title">{{ project.title }}</h2>
+                    <p class="about-project">{{ project.description }}</p>
+                    <div class="card-details">
+                      <i class="fa fa-calendar"></i>
+                      <span>{{ project.date }}</span>
+                      {% if project.technologies %}
+                      <span>&nbsp;|&nbsp;{{ project.technologies | split: "," | first | strip }}</span>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ===== Footer ===== -->
+      <footer>
+        <p>© {{ site.time | date: "%Y" }} {{ site.title }}</p>
+      </footer>
+
+    </div><!-- /.wrapper -->
+
+    <!-- ===== Project Detail Modal ===== -->
+    <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-container">
+        <button class="modal-close" id="modal-close" aria-label="Close project details">&times;</button>
+        <!-- Gradient preview header -->
+        <div class="modal-preview" id="modal-preview"></div>
+        <!-- Modal content -->
+        <div class="modal-body">
+          <div class="modal-category" id="modal-category"></div>
+          <h2 class="modal-title" id="modal-title"></h2>
+          <p class="modal-description" id="modal-description"></p>
+          <div id="modal-details"></div>
+          <a href="#" class="modal-link" id="modal-link" target="_blank" rel="noopener noreferrer">
+            View Project&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Scripts ===== -->
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+
+    <!-- Inline project data for portfolio.js -->
+    <script>
+      /* Projects data generated from _data/projects.yml */
+      var portfolioProjects = {{ site.data.projects | jsonify }};
+    </script>
+
+    <script src="{{ "/assets/js/portfolio.js" | relative_url }}"></script>
+
+    {% if site.google_analytics %}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', '{{ site.google_analytics }}', 'auto');
+      ga('send', 'pageview');
+    </script>
+    {% endif %}
+
+  </body>
+</html>
