@@ -6,7 +6,10 @@
   description: "Comprehensive analysis and visualization of cryptocurrency market data from CoinMarketCap, exploring price trends, market caps, and correlations between major cryptocurrencies."
   technologies: "Python, Pandas, Matplotlib, Seaborn"
   gradient: "linear-gradient(135deg, #f7b733 0%, #fc4a1a 100%)"
-  image: "images/dummy_thumbnail.jpg"
+  image: "https://github.com/mr-robot77/Coinmarketcap/blob/main/images/photo_5767218537188932884_y.png?raw=true"
+  images:
+    - "https://github.com/mr-robot77/Coinmarketcap/blob/main/images/photo_5767218537188932884_y.png?raw=true"
+    - "https://github.com/mr-robot77/Coinmarketcap/blob/main/images/photo_5767218537188932887_y.png?raw=true"
   url: "https://github.com/mr-robot77/Coinmarketcap"
   details:
     - "Collected and cleaned cryptocurrency market data using Python"
@@ -22,7 +25,10 @@
   description: "Applied machine learning techniques to analyze cryptocurrency data, including generating trading signals with EMA and clustering coins by behavior."
   technologies: "Python, scikit-learn, Pandas, NumPy"
   gradient: "linear-gradient(135deg, #4e65fd 0%, #31012c 100%)"
-  image: "images/dummy_thumbnail.jpg"
+  image: "https://github.com/mr-robot77/Quera_G11-Project2/blob/main/images/prediction/Generating%20trading%20signals%20with%20ema.png?raw=true"
+  images:
+    - "https://github.com/mr-robot77/Quera_G11-Project2/blob/main/images/prediction/Generating%20trading%20signals%20with%20ema.png?raw=true"
+    - "https://github.com/mr-robot77/Quera_G11-Project2/blob/main/images/clustering_k-means/k-means9.png?raw=true"
   url: "https://github.com/mr-robot77/Quera_G11-Project2"
   details:
     - "Generated trading signals using Exponential Moving Average (EMA)"
@@ -38,7 +44,10 @@
   description: "Built and evaluated deep learning models for Amazon product image classification and performed NLP sentiment analysis on customer reviews."
   technologies: "Python, TensorFlow, NLTK, scikit-learn"
   gradient: "linear-gradient(135deg, #f64f59 0%, #c0392b 100%)"
-  image: "images/dummy_thumbnail.jpg"
+  image: "https://github.com/mr-robot77/Quera_G11-Project3/blob/main/images/P2/Q1/Word_Cloud_reviews_overall_rating_12.png?raw=true"
+  images:
+    - "https://github.com/mr-robot77/Quera_G11-Project3/blob/main/images/P2/Q1/Word_Cloud_reviews_overall_rating_12.png?raw=true"
+    - "https://github.com/mr-robot77/Quera_G11-Project3/blob/main/images/P2/Q1/Top_10_brands.png?raw=true"
   url: "https://github.com/mr-robot77/Quera_G11-Project3"
   details:
     - "Classified Amazon product images using convolutional neural networks"
@@ -54,7 +63,10 @@
   description: "Analyzed sales data to uncover geographic and temporal trends, identify top-performing products, and generate actionable business insights."
   technologies: "Python, Pandas, Matplotlib, Geopandas"
   gradient: "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)"
-  image: "images/dummy_thumbnail.jpg"
+  image: "https://github.com/mr-robot77/Sales-Data-Analysis/blob/main/images/Geo.PNG?raw=true"
+  images:
+    - "https://github.com/mr-robot77/Sales-Data-Analysis/blob/main/images/Geo.PNG?raw=true"
+    - "https://github.com/mr-robot77/Sales-Data-Analysis/blob/main/images/Sales.PNG?raw=true"
   url: "https://github.com/mr-robot77/Sales-Data-Analysis"
   details:
     - "Analyzed sales trends over time using time-series techniques"
