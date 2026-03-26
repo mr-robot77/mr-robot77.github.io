@@ -608,51 +608,41 @@ header img.profile-photo {
   margin: 8px 0 12px;
 }
 
-/* ---------- Job Titles ---------- */
+/* ---------- Job Titles Styling ---------- */
 .job-titles {
+  font-size: 0.9em;
+  color: var(--pf-accent);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+}
+
+/* ---------- Social Icons Styling ---------- */
+.social-icons {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 0 0 10px;
-  font-family: var(--pf-font);
-  font-size: 0.82em;
-  font-weight: 500;
-  color: var(--pf-muted);
+  gap: 15px;
+  margin: 8px 0;
 }
 
-.job-sep {
-  color: var(--pf-border);
-}
-
-/* ---------- Social Links ---------- */
-.social-links {
-  display: flex;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.social-link {
+.social-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: var(--pf-bg);
-  border: 1.5px solid var(--pf-border);
-  color: var(--pf-muted);
-  font-size: 1em;
+  background: var(--pf-accent);
+  color: #fff;
   text-decoration: none;
-  transition: background var(--pf-transition), color var(--pf-transition), border-color var(--pf-transition), transform var(--pf-transition);
+  font-size: 1.2em;
+  transition: all var(--pf-transition);
 }
 
-.social-link:hover {
-  background: var(--pf-accent);
-  border-color: var(--pf-accent);
-  color: #fff;
+.social-icons a:hover {
+  background: var(--pf-accent-dark);
   transform: translateY(-2px);
-  text-decoration: none;
+  box-shadow: var(--pf-shadow);
 }
 
 /* ---------- Back to Top Button ---------- */
@@ -671,16 +661,9 @@ header img.profile-photo {
   display: none;
   align-items: center;
   justify-content: center;
-  font-size: 1em;
-  box-shadow: 0 4px 14px rgba(78, 101, 253, 0.4);
-  transition: background var(--pf-transition), transform var(--pf-transition), opacity var(--pf-transition);
-  z-index: 9000;
-  opacity: 0;
-}
-
-.back-to-top.visible {
-  display: flex;
-  opacity: 1;
+  box-shadow: var(--pf-shadow-hover);
+  transition: all var(--pf-transition);
+  z-index: 1000;
 }
 
 .back-to-top:hover {
@@ -688,22 +671,8 @@ header img.profile-photo {
   transform: translateY(-3px);
 }
 
-/* ---------- Modal secondary GitHub link ---------- */
-.modal-link-github {
-  background: #24292f;
-  margin-left: 8px;
-}
-
-.modal-link-github:hover {
-  background: #1b1f23;
-}
-
-/* Modal action row */
-.modal-actions {
+.back-to-top.visible {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
 }
 
 /* ---------- Responsive tweaks ---------- */
