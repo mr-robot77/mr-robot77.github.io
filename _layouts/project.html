@@ -29,7 +29,7 @@
     <![endif]-->
   </head>
 
-  <body class="project-page">
+  <body>
     <div class="wrapper">
 
       <!-- ===== Sidebar / Header ===== -->
@@ -40,113 +40,6 @@
 
         {% if site.logo %}
           <img src="{{ site.logo | relative_url }}" alt="Profile Photo" class="profile-photo" />
-        {% endif %}
-
-        <div class="job-titles">
-          <span>Data Scientist</span>
-          <span class="job-sep">·</span>
-          <span>AI/ML Engineer</span>
-        </div>
-
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
-
-        <nav class="section-nav" aria-label="Portfolio sections">
-          <a href="{{ "/" | absolute_url }}#about" class="nav-tab">
-            <i class="fa-solid fa-user"></i> About
-          </a>
-          <a href="{{ "/" | absolute_url }}#projects" class="nav-tab">
-            <i class="fa-solid fa-folder-open"></i> Projects
-          </a>
-        </nav>
-
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/saleh-abdnjd" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/mr-robot77" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </div>
-      </header>
-
-      <!-- ===== Main Content ===== -->
-      <section class="project-content">
-
-        <a href="{{ "/" | absolute_url }}#projects" class="back-link">
-          <i class="fa-solid fa-arrow-left"></i> Back to Projects
-        </a>
-
-        <!-- Project Header -->
-        <div class="project-header" style="background: {{ page.gradient }};">
-          {% if page.images %}
-            {% assign first_img = page.images | first %}
-            <img src="{{ first_img }}" alt="{{ page.title }}" class="project-header-img">
-          {% elsif page.image %}
-            <img src="{{ page.image }}" alt="{{ page.title }}" class="project-header-img">
-          {% endif %}
-        </div>
-
-        <!-- Project Meta -->
-        <div class="project-meta-card">
-          <div class="project-meta-top">
-            <span class="category-badge" style="background-color: {{ page.category_color }};">{{ page.category }}</span>
-            <span class="project-date"><i class="fa-solid fa-calendar"></i> {{ page.date }}</span>
-          </div>
-          <h1 class="project-page-title">{{ page.title }}</h1>
-          <p class="project-page-desc">{{ page.description }}</p>
-
-          {% if page.technologies %}
-          <div class="modal-tech">
-            {% assign techs = page.technologies | split: "," %}
-            {% for tech in techs %}
-              <span class="tech-tag">{{ tech | strip }}</span>
-            {% endfor %}
-          </div>
-          {% endif %}
-
-          <div class="project-page-actions">
-            {% if page.url_github %}
-            <a href="{{ page.url_github }}" class="modal-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-github"></i>&nbsp;GitHub Repo
-            </a>
-            {% endif %}
-          </div>
-        </div>
-
-        <!-- Project Details -->
-        {% if page.details %}
-        <div class="project-details-card">
-          <h2 class="project-section-title"><i class="fa-solid fa-list-check"></i> Key Highlights</h2>
-          <ul class="modal-details-list project-details-list">
-            {% for detail in page.details %}
-            <li>{{ detail }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-        {% endif %}
-
-        <!-- Image Gallery -->
-        {% if page.images and page.images.size > 0 %}
-        <div class="project-gallery-card">
-          <h2 class="project-section-title"><i class="fa-solid fa-images"></i> Gallery</h2>
-          <div class="project-gallery">
-            {% for img in page.images %}
-              {% if img contains "://" %}
-                {% assign img_src = img %}
-              {% else %}
-                {% assign img_src = img | relative_url %}
-              {% endif %}
-              <img src="{{ img_src }}" alt="{{ page.title }} screenshot {{ forloop.index }}" class="project-gallery-img" loading="lazy">
-            {% endfor %}
-          </div>
-        </div>
-        {% endif %}
-
-        <!-- Markdown body -->
-        {% if content %}
-        <div class="project-body-card">
-          {{ content }}
-        </div>
         {% endif %}
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
@@ -174,21 +67,6 @@
 
     <!-- ===== Back to Top Button ===== -->
     <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-      <i class="fa-solid fa-chevron-up"></i>
-    </button>
-
-    <!-- ===== Lightbox ===== -->
-    <div class="lightbox-overlay" id="lightbox">
-      <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
-      <button class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous image">&lt;</button>
-      <div class="lightbox-content">
-        <img id="lightbox-img" src="" alt="Enlarged view">
-      </div>
-      <button class="lightbox-nav next" id="lightbox-next" aria-label="Next image">&gt;</button>
-    </div>
-
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-    <script src="{{ "/assets/js/project.js" | relative_url }}"></script>
       <i class="fa-solid fa-arrow-up"></i>
     </button>
 

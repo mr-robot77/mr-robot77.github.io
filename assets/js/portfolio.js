@@ -117,8 +117,6 @@
     var modal      = document.getElementById('project-modal');
     var modalClose = document.getElementById('modal-close');
     var modalGallery = document.getElementById('modal-gallery');
-    var modalLinkEl = document.getElementById('modal-link');
-    var modalLinkGithub = document.getElementById('modal-link-github');
 
     if (modal && modalClose) {
 
@@ -199,28 +197,8 @@
           detailsEl.appendChild(ul);
         }
 
-        /* View Details link → project page (if available) or GitHub */
-        if (modalLinkEl) {
-          if (data.page_url) {
-            modalLinkEl.href = data.page_url;
-            modalLinkEl.removeAttribute('target');
-            modalLinkEl.removeAttribute('rel');
-          } else {
-            modalLinkEl.href = data.url || '#';
-            modalLinkEl.setAttribute('target', '_blank');
-            modalLinkEl.setAttribute('rel', 'noopener noreferrer');
-          }
-        }
-
-        /* GitHub link */
-        if (modalLinkGithub) {
-          if (data.url) {
-            modalLinkGithub.href = data.url;
-            modalLinkGithub.style.display = 'inline-flex';
-          } else {
-            modalLinkGithub.style.display = 'none';
-          }
-        }
+        /* View project link */
+        document.getElementById('modal-link').href = data.url || '#';
 
         /* GitHub link */
         var githubLink = document.getElementById('modal-github-link');

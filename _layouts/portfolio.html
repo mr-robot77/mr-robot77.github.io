@@ -39,12 +39,6 @@
           <img src="{{ site.logo | relative_url }}" alt="Profile Photo" class="profile-photo" />
         {% endif %}
 
-        <div class="job-titles">
-          <span>Data Scientist</span>
-          <span class="job-sep">·</span>
-          <span>AI/ML Engineer</span>
-        </div>
-
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
         {% if site.github.is_user_page %}
@@ -60,16 +54,6 @@
             <i class="fa-solid fa-folder-open"></i> Projects
           </a>
         </nav>
-
-        <!-- Social Links -->
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/saleh-abdnjd" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/mr-robot77" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </div>
       </header>
 
       <!-- ===== Main Content ===== -->
