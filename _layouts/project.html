@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% seo %}
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Minimal theme base CSS -->
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+
+    <!-- Portfolio custom CSS -->
+    <link rel="stylesheet" href="{{ "/assets/css/portfolio.css" | relative_url }}">
+  </head>
+
+  {% assign project = site.data.projects | where: "slug", page.project_slug | first %}
+  {% assign primary_image = project.image %}
+  {% if project.images and project.images.size > 0 %}
+    {% assign primary_image = project.images[0] %}
+  {% endif %}
+  {% assign gradient = project.gradient | default: "linear-gradient(135deg, #4e65fd 0%, #7f53ac 100%)" %}
+
+  <body class="project-page">
+    <div class="project-shell project-top-link">
+      <a class="back-link" href="{{ "/#projects" | relative_url }}">
+        <i class="fa-solid fa-arrow-left"></i> Back to portfolio
+      </a>
+    </div>
+
+    <section class="project-hero" style="background: {{ gradient }};">
+      <div class="project-hero__inner project-shell">
+        <div class="project-hero__text">
+          <p class="project-kicker">
+            {{ project.category | default: "Project" }}
+            {% if project.date %} • {{ project.date }}{% endif %}
+          </p>
+          <h1>{{ project.title | default: page.title }}</h1>
+          <p class="project-lede">{{ project.description | default: page.description }}</p>
+
+          {% if project.technologies %}
+          <div class="project-tags">
+            {% assign techs = project.technologies | split: "," %}
+            {% for tech in techs %}
+              <span class="project-tag">{{ tech | strip }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <div class="project-hero__links">
+            {% if project.url %}
+              <a class="btn" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i> View on GitHub
+              </a>
+            {% endif %}
+            <a class="btn ghost" href="{{ "/#projects" | relative_url }}">
+              <i class="fa-solid fa-arrow-left"></i> Back to projects
+            </a>
+          </div>
+        </div>
+
+        {% if primary_image %}
+        <div class="project-hero__media">
+          <img src="{{ primary_image }}" alt="{{ project.title | default: page.title }}">
+        </div>
+        {% endif %}
+      </div>
+    </section>
+
+    <main class="project-shell project-main">
+      <div class="project-content">
+        <section class="project-section">
+          <h2>Project Overview</h2>
+          <p>{{ project.description | default: page.description }}</p>
+          {{ content }}
+        </section>
+
+        {% if project.details %}
+        <section class="project-section">
+          <h3>Highlights</h3>
+          <ul class="project-list">
+            {% for point in project.details %}
+            <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        {% if project.images %}
+        <section class="project-section">
+          <h3>Gallery</h3>
+          <div class="project-gallery">
+            {% for img in project.images %}
+            <figure>
+              <img src="{{ img }}" alt="{{ project.title }} screenshot {{ forloop.index }}">
+            </figure>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+      </div>
+
+      <aside class="project-meta-card">
+        <h4>Quick facts</h4>
+        <dl>
+          {% if project.category %}
+          <dt>Category</dt>
+          <dd>{{ project.category }}</dd>
+          {% endif %}
+          {% if project.date %}
+          <dt>Year</dt>
+          <dd>{{ project.date }}</dd>
+          {% endif %}
+          {% if project.technologies %}
+          <dt>Tech stack</dt>
+          <dd>{{ project.technologies }}</dd>
+          {% endif %}
+          {% if project.category_slug %}
+          <dt>Tag</dt>
+          <dd>{{ project.category_slug | replace: "_", " " }}</dd>
+          {% endif %}
+        </dl>
+
+        <div class="project-meta-links">
+          <a href="{{ "/#projects" | relative_url }}"><i class="fa-solid fa-arrow-left"></i> Back to portfolio</a>
+          {% if project.url %}
+          <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub repository</a>
+          {% endif %}
+        </div>
+      </aside>
+    </main>
+
+    <button id="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    <script>
+      /* Provide empty project list to keep portfolio.js safeguards happy */
+      var portfolioProjects = [];
+    </script>
+    <script src="{{ "/assets/js/portfolio.js" | relative_url }}"></script>
+  </body>
+</html>

@@ -117,6 +117,7 @@
     var modal      = document.getElementById('project-modal');
     var modalClose = document.getElementById('modal-close');
     var modalGallery = document.getElementById('modal-gallery');
+    var modalRepoLink = document.getElementById('modal-repo-link');
 
     if (modal && modalClose) {
 
@@ -198,7 +199,27 @@
         }
 
         /* View project link */
-        document.getElementById('modal-link').href = data.url || '#';
+        var modalLink = document.getElementById('modal-link');
+        if (modalLink) {
+          if (data.detail_url) {
+            modalLink.href = data.detail_url;
+            modalLink.textContent = 'Open Case Study';
+            modalLink.target = '_self';
+          } else {
+            modalLink.href = data.url || '#';
+            modalLink.textContent = 'View Project';
+            modalLink.target = '_blank';
+          }
+        }
+
+        if (modalRepoLink) {
+          if (data.detail_url && data.url) {
+            modalRepoLink.style.display = 'inline-flex';
+            modalRepoLink.href = data.url;
+          } else {
+            modalRepoLink.style.display = 'none';
+          }
+        }
 
         /* Open */
         modal.classList.add('open');
@@ -239,6 +260,13 @@
       });
 
     } /* end if (modal && modalClose) */
+
+    /* Prevent card action links from triggering the modal */
+    document.querySelectorAll('.card-link').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    });
 
     /* =====================================================
        Lightbox for Gallery Images
@@ -321,6 +349,27 @@
           openLightbox(images, index);
         }
       });
+    }
+
+    /* =====================================================
+       Back to Top
+    ===================================================== */
+    var backToTop = document.getElementById('back-to-top');
+    if (backToTop) {
+      backToTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      var toggleBackToTop = function () {
+        if (window.scrollY > 250) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      };
+
+      toggleBackToTop();
+      window.addEventListener('scroll', toggleBackToTop);
     }
 
   });

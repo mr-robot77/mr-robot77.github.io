@@ -1,4 +1,5 @@
 - title: "Coinmarketcap Data Analysis & Visualizing"
+  slug: "coinmarketcap-data-analysis"
   category: "Data Science"
   category_color: "#e67e22"
   category_slug: "data_science"
@@ -11,6 +12,7 @@
     - "https://raw.githubusercontent.com/mr-robot77/Coinmarketcap/main/images/photo_5767218537188932884_y.png"
     - "https://raw.githubusercontent.com/mr-robot77/Coinmarketcap/main/images/photo_5767218537188932887_y.png"
   url: "https://github.com/mr-robot77/Coinmarketcap"
+  detail_url: "/projects/coinmarketcap-data-analysis/"
   details:
     - "Collected and cleaned cryptocurrency market data using Python"
     - "Performed exploratory data analysis on price trends and market cap patterns"
@@ -18,6 +20,7 @@
     - "Analyzed price correlations between top cryptocurrencies"
 
 - title: "Cryptocurrency Data Analysis with Machine Learning"
+  slug: "cryptocurrency-machine-learning"
   category: "Machine Learning"
   category_color: "#743ca5"
   category_slug: "machine_learning"
@@ -30,6 +33,7 @@
     - "https://raw.githubusercontent.com/mr-robot77/Quera_G11-Project2/main/images/prediction/Generating%20trading%20signals%20with%20ema.png"
     - "https://raw.githubusercontent.com/mr-robot77/Quera_G11-Project2/main/images/clustering_k-means/k-means9.png"
   url: "https://github.com/mr-robot77/Quera_G11-Project2"
+  detail_url: "/projects/cryptocurrency-machine-learning/"
   details:
     - "Generated trading signals using Exponential Moving Average (EMA)"
     - "Applied K-Means clustering to group cryptocurrencies by behavior"
@@ -37,6 +41,7 @@
     - "Analyzed trading patterns and market behavior over time"
 
 - title: "Amazon Products Image Classification & Customer Reviews Sentiment Analysis"
+  slug: "amazon-image-sentiment"
   category: "Deep Learning"
   category_color: "#e74c3c"
   category_slug: "deep_learning"
@@ -49,6 +54,7 @@
     - "https://raw.githubusercontent.com/mr-robot77/Quera_G11-Project3/main/images/P2/Q1/Word_Cloud_reviews_overall_rating_12.png"
     - "https://raw.githubusercontent.com/mr-robot77/Quera_G11-Project3/main/images/P2/Q1/Top_10_brands.png"
   url: "https://github.com/mr-robot77/Quera_G11-Project3"
+  detail_url: "/projects/amazon-image-sentiment/"
   details:
     - "Classified Amazon product images using convolutional neural networks"
     - "Performed sentiment analysis on customer reviews using NLTK"
@@ -56,6 +62,7 @@
     - "Identified top brands and product categories from review data"
 
 - title: "Sales Data Analysis"
+  slug: "sales-data-analysis"
   category: "Data Science"
   category_color: "#1e8449"
   category_slug: "data_science"
@@ -68,6 +75,7 @@
     - "https://raw.githubusercontent.com/mr-robot77/Sales-Data-Analysis/main/images/Geo.PNG"
     - "https://raw.githubusercontent.com/mr-robot77/Sales-Data-Analysis/main/images/Sales.PNG"
   url: "https://github.com/mr-robot77/Sales-Data-Analysis"
+  detail_url: "/projects/sales-data-analysis/"
   details:
     - "Analyzed sales trends over time using time-series techniques"
     - "Created geographic visualizations showing regional sales distribution"

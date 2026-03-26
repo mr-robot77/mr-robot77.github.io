@@ -39,6 +39,29 @@
           <img src="{{ site.logo | relative_url }}" alt="Profile Photo" class="profile-photo" />
         {% endif %}
 
+        {% if site.job_titles %}
+        <div class="job-titles">
+          {% for title in site.job_titles %}
+            <span class="job-title-pill">{{ title }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if site.linkedin_url or site.github_url %}
+        <div class="social-links">
+          {% if site.linkedin_url %}
+            <a href="{{ site.linkedin_url }}" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          {% endif %}
+          {% if site.github_url %}
+            <a href="{{ site.github_url }}" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          {% endif %}
+        </div>
+        {% endif %}
+
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
         {% if site.github.is_user_page %}
@@ -147,6 +170,14 @@
                       <span>&nbsp;|&nbsp;{{ project.technologies | split: "," | first | strip }}</span>
                       {% endif %}
                     </div>
+                    <div class="card-actions">
+                      {% if project.detail_url %}
+                        <a class="card-link detail-link" href="{{ project.detail_url | relative_url }}">Case Study</a>
+                      {% endif %}
+                      {% if project.url %}
+                        <a class="card-link external-link" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+                      {% endif %}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -161,6 +192,9 @@
       <footer>
         <p>© {{ site.time | date: "%Y" }} {{ site.title }}</p>
       </footer>
+      <button id="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
 
     </div><!-- /.wrapper -->
 
@@ -177,9 +211,14 @@
           <p class="modal-description" id="modal-description"></p>
           <div class="modal-gallery" id="modal-gallery"></div>
           <div id="modal-details"></div>
-          <a href="#" class="modal-link" id="modal-link" target="_blank" rel="noopener noreferrer">
-            View Project&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+          <div class="modal-links">
+            <a href="#" class="modal-link" id="modal-link" target="_blank" rel="noopener noreferrer">
+              View Project&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="#" class="modal-link secondary" id="modal-repo-link" target="_blank" rel="noopener noreferrer" style="display:none;">
+              View on GitHub&nbsp;<i class="fa-brands fa-github"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
