@@ -783,34 +783,49 @@
 }
 
 /* ---------- Skills Section ---------- */
-.skills-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
 }
 
-.skill-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  flex-wrap: wrap;
+.skill-group-card {
+  border-radius: var(--pf-radius-sm);
+  overflow: hidden;
+  box-shadow: var(--pf-shadow);
+  background: var(--pf-card);
+  border: 1px solid var(--pf-border);
+  transition: transform var(--pf-transition), box-shadow var(--pf-transition);
 }
 
-.skill-category {
+.skill-group-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--pf-shadow-hover);
+}
+
+.skill-group-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  color: #fff;
   font-family: var(--pf-font);
   font-size: 0.82em;
   font-weight: 700;
-  color: var(--pf-text);
-  min-width: 150px;
-  padding-top: 3px;
+  letter-spacing: 0.3px;
+}
+
+.skill-group-header i {
+  font-size: 1em;
+  opacity: 0.92;
   flex-shrink: 0;
 }
 
-.skill-items {
+.skill-group-body {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  flex: 1;
+  padding: 12px 14px 14px;
 }
 
 .skill-tag {
@@ -926,6 +941,9 @@ header img.profile-photo {
   }
   .modal-body {
     padding: 18px 18px 22px;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }
 
