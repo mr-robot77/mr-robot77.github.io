@@ -49,8 +49,14 @@
           <a href="#education" class="nav-tab" data-section="education">
             <i class="fa-solid fa-graduation-cap"></i> Education
           </a>
+          <a href="#experience" class="nav-tab" data-section="experience">
+            <i class="fa-solid fa-briefcase"></i> Experience
+          </a>
           <a href="#projects" class="nav-tab" data-section="projects">
             <i class="fa-solid fa-folder-open"></i> Projects
+          </a>
+          <a href="#skills" class="nav-tab" data-section="skills">
+            <i class="fa-solid fa-code"></i> Skills
           </a>
         </nav>
       </header>
@@ -99,6 +105,41 @@
                   <ul class="education-details">
                     {% for detail in edu.details %}
                     <li>{{ detail }}</li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div id="experience-section" class="portfolio-section">
+          <div class="section-card">
+            <div class="section-header">
+              <i class="fa-solid fa-briefcase section-icon"></i>
+              <h2>Experience</h2>
+            </div>
+            <div class="experience-list">
+              {% for exp in site.data.experience %}
+              <div class="experience-item">
+                <div class="experience-icon">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div class="experience-body">
+                  <div class="experience-header">
+                    <div>
+                      <h3 class="experience-title">{{ exp.title }}</h3>
+                      <div class="experience-company">{{ exp.company }}{% if exp.location %} &mdash; {{ exp.location }}{% endif %}</div>
+                    </div>
+                    <div class="experience-dates">{{ exp.start_date }} &ndash; {{ exp.end_date }}</div>
+                  </div>
+                  {% if exp.details %}
+                  <ul class="experience-details">
+                    {% for detail in exp.details %}
+                    <li>{% if detail.link %}<a href="{{ detail.link }}" target="_blank" rel="noopener noreferrer">{{ detail.text }}</a>{% else %}{{ detail.text }}{% endif %}</li>
                     {% endfor %}
                   </ul>
                   {% endif %}
@@ -185,6 +226,29 @@
                       {% endif %}
                     </div>
                   </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div id="skills-section" class="portfolio-section">
+          <div class="section-card">
+            <div class="section-header">
+              <i class="fa-solid fa-code section-icon"></i>
+              <h2>Technical Skills</h2>
+            </div>
+            <div class="skills-list">
+              {% for skill in site.data.skills %}
+              <div class="skill-item">
+                <div class="skill-category">{{ skill.category }}</div>
+                <div class="skill-items">
+                  {% assign items = skill.items | split: ", " %}
+                  {% for item in items %}
+                  <span class="skill-tag">{{ item }}</span>
+                  {% endfor %}
                 </div>
               </div>
               {% endfor %}

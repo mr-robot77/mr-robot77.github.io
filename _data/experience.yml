@@ -1,0 +1,23 @@
+- title: "Data Science Intern"
+  company: "Quera"
+  location: "Tehran, Iran"
+  start_date: "Aug 2023"
+  end_date: "Nov 2023"
+  details:
+    - text: "Data Science Bootcamp in 14 weeks"
+      link: "https://quera.org/bootcamp"
+    - text: "Learning both technical and soft skills"
+      link: "https://github.com/mr-robot77/Data-Science-Bootcamp-2023"
+    - text: "Worked on 3 projects in data analysis, Machine Learning, and Deep Learning as the team head of a 5-person group"
+
+- title: "Artificial Intelligence Developer"
+  company: "Diginext"
+  location: "Tehran, Iran"
+  start_date: "Dec 2019"
+  end_date: "Feb 2020"
+  details:
+    - text: "Selected Artificial Intelligence Online Programming Contest for Digikala-Next AI Winter Camp"
+    - text: "A Startup Bootcamp for Building an AI Startup in the E-Commerce and Logistics Industry with the Support of Digikala.com Company; led to $100,000 fundraising in new revenue"
+    - text: "Scoreboard"
+      link: "https://quera.org/contest/assignments/11815/scoreboard/"
+    - text: "Practiced soft skills with teammates and software teams, looking for AI solutions"
