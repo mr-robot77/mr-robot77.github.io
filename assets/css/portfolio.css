@@ -610,12 +610,13 @@ header img.profile-photo {
 
 /* ---------- Job Titles Styling ---------- */
 .job-titles {
-  font-size: 0.9em;
+  font-size: 0.85em;
   color: var(--pf-accent);
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
   text-align: left;
+  word-break: break-word;
 }
 
 /* ---------- Social Icons Styling ---------- */
@@ -698,5 +699,20 @@ header img.profile-photo {
   }
   .modal-body {
     padding: 18px 18px 22px;
+  }
+}
+
+/* ---------- Make sidebar scroll with the page ---------- */
+/* Override the minimal theme's fixed positioning so both
+   the left sidebar and right content scroll together.     */
+@media screen and (min-width: 961px) {
+  div.wrapper > header {
+    position: relative;
+    float: left;
+  }
+
+  div.wrapper > footer {
+    position: relative;
+    bottom: auto;
   }
 }

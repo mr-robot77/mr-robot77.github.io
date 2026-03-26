@@ -1,11 +1,11 @@
 title: Saleh Abednezhad # your name (or website title) here
 logo: "/images/profile-photo.jpg?raw=true" # your photo (or logo) here
-job_title: "Data Scientist | AI/ML Engineer"
+job_title: "Data Scientist | Data Analyst | AI/ML Engineer | Data Engineer | BI Analyst"
 linkedin_url: "https://www.linkedin.com/in/saleh-abdnjd"
 github_url: "https://github.com/mr-robot77"
 description: > # your text below (remove <br> elements if you don't need line breaks)
   <div class="job-titles">
-    Data Scientist | AI/ML Engineer
+    Data Scientist | Data Analyst | AI/ML Engineer | Data Engineer | BI Analyst
   </div>
   <br>
   <div class="social-icons">
@@ -16,26 +16,6 @@ description: > # your text below (remove <br> elements if you don't need line br
       <i class="fab fa-github"></i>
     </a>
   </div>
-  <br>
-  <strong>Education:</strong><br>
-  MSc. Statistics & Data Science<br>
-  Hasselt University, Belgium<br>
-  2024-2027
-  <br><br>
-  Skills:<br>
-  - Python
-  - R
-  - SQL
-  - Machine Learning
-  - Deep Learning
-  - Data Visualization
-  <br><br>
-
-  Interests:<br>
-  - Artificial Intelligence
-  - Stocks & Cryptocurrency
-  - Data Science
-  - Data and Databases 
   
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
