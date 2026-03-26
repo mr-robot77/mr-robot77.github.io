@@ -30,7 +30,7 @@
 
     /* Handle deep-link hash on load */
     var hash = window.location.hash.replace('#', '');
-    if (hash === 'about' || hash === 'projects') {
+    if (hash === 'about' || hash === 'education' || hash === 'projects') {
       switchSection(hash);
     }
 

@@ -46,6 +46,9 @@
           <a href="#about" class="nav-tab active" data-section="about">
             <i class="fa-solid fa-user"></i> About
           </a>
+          <a href="#education" class="nav-tab" data-section="education">
+            <i class="fa-solid fa-graduation-cap"></i> Education
+          </a>
           <a href="#projects" class="nav-tab" data-section="projects">
             <i class="fa-solid fa-folder-open"></i> Projects
           </a>
@@ -64,6 +67,44 @@
             </div>
             <div class="about-content">
               {{ content }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Section -->
+        <div id="education-section" class="portfolio-section">
+          <div class="section-card">
+            <div class="section-header">
+              <i class="fa-solid fa-graduation-cap section-icon"></i>
+              <h2>Education</h2>
+            </div>
+            <div class="education-list">
+              {% for edu in site.data.education %}
+              <div class="education-item">
+                <div class="education-icon">
+                  <i class="fa-solid fa-university"></i>
+                </div>
+                <div class="education-body">
+                  <div class="education-header">
+                    <div>
+                      <h3 class="education-degree">{{ edu.degree }}{% if edu.field %} in {{ edu.field }}{% endif %}</h3>
+                      <div class="education-institution">{{ edu.institution }}{% if edu.location %} &mdash; {{ edu.location }}{% endif %}</div>
+                    </div>
+                    <div class="education-years">{{ edu.start_year }}{% if edu.end_year %} &ndash; {{ edu.end_year }}{% endif %}</div>
+                  </div>
+                  {% if edu.description %}
+                  <p class="education-description">{{ edu.description }}</p>
+                  {% endif %}
+                  {% if edu.details %}
+                  <ul class="education-details">
+                    {% for detail in edu.details %}
+                    <li>{{ detail }}</li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </div>
+              </div>
+              {% endfor %}
             </div>
           </div>
         </div>

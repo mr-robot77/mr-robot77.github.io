@@ -1,0 +1,10 @@
+- degree: "Bachelor of Science"
+  field: "Computer Engineering"
+  institution: "University of Tehran"
+  location: "Tehran, Iran"
+  start_year: "2018"
+  end_year: "2022"
+  description: "Studied computer engineering with a focus on software development, algorithms, and data structures. Specialized in Artificial Intelligence and Machine Learning."
+  details:
+    - "Graduated with honors"
+    - "Completed thesis on deep learning applications in data analysis"
