@@ -110,6 +110,98 @@
   font-size: 1.1em;
 }
 
+/* ---------- Education Section ---------- */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.education-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.education-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(78, 101, 253, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pf-accent);
+  font-size: 1em;
+  margin-top: 2px;
+}
+
+.education-body {
+  flex: 1;
+  border-left: 2px solid var(--pf-border);
+  padding-left: 16px;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.education-degree {
+  font-family: var(--pf-font);
+  font-size: 0.95em;
+  font-weight: 700;
+  color: var(--pf-text);
+  margin: 0 0 3px;
+  line-height: 1.4;
+}
+
+.education-institution {
+  font-family: var(--pf-font);
+  font-size: 0.83em;
+  color: var(--pf-accent);
+  font-weight: 500;
+}
+
+.education-years {
+  font-family: var(--pf-font);
+  font-size: 0.78em;
+  color: var(--pf-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  background: var(--pf-bg);
+  border: 1px solid var(--pf-border);
+  border-radius: 20px;
+  padding: 2px 10px;
+  margin-top: 2px;
+}
+
+.education-description {
+  font-family: var(--pf-font);
+  font-size: 0.85em;
+  color: var(--pf-muted);
+  line-height: 1.65;
+  margin: 6px 0 8px;
+}
+
+.education-details {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.education-details li {
+  font-family: var(--pf-font);
+  font-size: 0.82em;
+  color: var(--pf-muted);
+  line-height: 1.7;
+  margin-bottom: 2px;
+}
+
 /* ---------- About Section ---------- */
 .about-content {
   font-family: var(--pf-font);
