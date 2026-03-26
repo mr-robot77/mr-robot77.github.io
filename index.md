@@ -4,6 +4,11 @@ layout: portfolio
 
 I'm a curious and passionate problem solver — a **Data Scientist** with experience in AI/ML Engineering. I have strong skills in data analysis, machine learning, and visualization, backed by solid programming knowledge.
 
+### Education
+
+- **MSc. Statistics & Data Science**
+  Hasselt University, Belgium (2024-2027)
+
 ### Skills
 
 - Python, R, SQL

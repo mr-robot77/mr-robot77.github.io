@@ -1,6 +1,27 @@
 title: Saleh Abednezhad # your name (or website title) here
 logo: "/images/profile-photo.jpg?raw=true" # your photo (or logo) here
+job_title: "Data Scientist | AI/ML Engineer"
+linkedin_url: "https://www.linkedin.com/in/saleh-abdnjd"
+github_url: "https://github.com/mr-robot77"
 description: > # your text below (remove <br> elements if you don't need line breaks)
+  <div class="job-titles">
+    Data Scientist | AI/ML Engineer
+  </div>
+  <br>
+  <div class="social-icons">
+    <a href="https://www.linkedin.com/in/saleh-abdnjd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/mr-robot77" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+  <br>
+  <strong>Education:</strong><br>
+  MSc. Statistics & Data Science<br>
+  Hasselt University, Belgium<br>
+  2024-2027
+  <br><br>
   Skills:<br>
   - Python
   - R
@@ -9,14 +30,12 @@ description: > # your text below (remove <br> elements if you don't need line br
   - Deep Learning
   - Data Visualization
   <br><br>
-  
+
   Interests:<br>
   - Artificial Intelligence
   - Stocks & Cryptocurrency
   - Data Science
-  - Data and Databases
-  <br><br>
-  <a href="https://www.linkedin.com/in/saleh-abdnjd">View My LinkedIn Profile</a> 
+  - Data and Databases 
   
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:

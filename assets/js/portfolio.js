@@ -200,6 +200,15 @@
         /* View project link */
         document.getElementById('modal-link').href = data.url || '#';
 
+        /* GitHub link */
+        var githubLink = document.getElementById('modal-github-link');
+        if (data.github_url) {
+          githubLink.href = data.github_url;
+          githubLink.style.display = 'inline-flex';
+        } else {
+          githubLink.style.display = 'none';
+        }
+
         /* Open */
         modal.classList.add('open');
         document.body.style.overflow = 'hidden';
@@ -320,6 +329,30 @@
           var images = JSON.parse(e.target.dataset.lightboxImages);
           openLightbox(images, index);
         }
+      });
+    }
+
+    /* =====================================================
+       Back to Top Button
+    ===================================================== */
+    var backToTopBtn = document.getElementById('back-to-top');
+
+    if (backToTopBtn) {
+      // Show button when scrolling down
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      });
+
+      // Scroll to top when clicked
+      backToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
     }
 

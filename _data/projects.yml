@@ -10,7 +10,8 @@
   images:
     - "https://raw.githubusercontent.com/mr-robot77/Coinmarketcap/main/images/photo_5767218537188932884_y.png"
     - "https://raw.githubusercontent.com/mr-robot77/Coinmarketcap/main/images/photo_5767218537188932887_y.png"
-  url: "https://github.com/mr-robot77/Coinmarketcap"
+  url: "/projects/coinmarketcap-analysis/"
+  github_url: "https://github.com/mr-robot77/Coinmarketcap"
   details:
     - "Collected and cleaned cryptocurrency market data using Python"
     - "Performed exploratory data analysis on price trends and market cap patterns"
@@ -29,7 +30,8 @@
   images:
     - "https://raw.githubusercontent.com/mr-robot77/Quera_G11-Project2/main/images/prediction/Generating%20trading%20signals%20with%20ema.png"
     - "https://raw.githubusercontent.com/mr-robot77/Quera_G11-Project2/main/images/clustering_k-means/k-means9.png"
-  url: "https://github.com/mr-robot77/Quera_G11-Project2"
+  url: "/projects/cryptocurrency-ml/"
+  github_url: "https://github.com/mr-robot77/Quera_G11-Project2"
   details:
     - "Generated trading signals using Exponential Moving Average (EMA)"
     - "Applied K-Means clustering to group cryptocurrencies by behavior"
@@ -48,7 +50,8 @@
   images:
     - "https://raw.githubusercontent.com/mr-robot77/Quera_G11-Project3/main/images/P2/Q1/Word_Cloud_reviews_overall_rating_12.png"
     - "https://raw.githubusercontent.com/mr-robot77/Quera_G11-Project3/main/images/P2/Q1/Top_10_brands.png"
-  url: "https://github.com/mr-robot77/Quera_G11-Project3"
+  url: "/projects/amazon-classification/"
+  github_url: "https://github.com/mr-robot77/Quera_G11-Project3"
   details:
     - "Classified Amazon product images using convolutional neural networks"
     - "Performed sentiment analysis on customer reviews using NLTK"
@@ -67,7 +70,8 @@
   images:
     - "https://raw.githubusercontent.com/mr-robot77/Sales-Data-Analysis/main/images/Geo.PNG"
     - "https://raw.githubusercontent.com/mr-robot77/Sales-Data-Analysis/main/images/Sales.PNG"
-  url: "https://github.com/mr-robot77/Sales-Data-Analysis"
+  url: "/projects/sales-data-analysis/"
+  github_url: "https://github.com/mr-robot77/Sales-Data-Analysis"
   details:
     - "Analyzed sales trends over time using time-series techniques"
     - "Created geographic visualizations showing regional sales distribution"

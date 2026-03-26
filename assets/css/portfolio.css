@@ -562,6 +562,13 @@
   margin-bottom: 2px;
 }
 
+.modal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
 .modal-link {
   display: inline-flex;
   align-items: center;
@@ -582,6 +589,14 @@
   transform: translateY(-1px);
 }
 
+.modal-link.secondary {
+  background: #6b7280;
+}
+
+.modal-link.secondary:hover {
+  background: #4b5563;
+}
+
 /* ---------- Profile photo override ---------- */
 header img.profile-photo {
   border-radius: 50%;
@@ -591,6 +606,73 @@ header img.profile-photo {
   border: 3px solid var(--pf-accent);
   display: block;
   margin: 8px 0 12px;
+}
+
+/* ---------- Job Titles Styling ---------- */
+.job-titles {
+  font-size: 0.9em;
+  color: var(--pf-accent);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+}
+
+/* ---------- Social Icons Styling ---------- */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin: 8px 0;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--pf-accent);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: all var(--pf-transition);
+}
+
+.social-icons a:hover {
+  background: var(--pf-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--pf-shadow);
+}
+
+/* ---------- Back to Top Button ---------- */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--pf-accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2em;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--pf-shadow-hover);
+  transition: all var(--pf-transition);
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  background: var(--pf-accent-dark);
+  transform: translateY(-3px);
+}
+
+.back-to-top.visible {
+  display: flex;
 }
 
 /* ---------- Responsive tweaks ---------- */

@@ -164,6 +164,11 @@
 
     </div><!-- /.wrapper -->
 
+    <!-- ===== Back to Top Button ===== -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
     <!-- ===== Project Detail Modal ===== -->
     <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <div class="modal-container">
@@ -177,9 +182,14 @@
           <p class="modal-description" id="modal-description"></p>
           <div class="modal-gallery" id="modal-gallery"></div>
           <div id="modal-details"></div>
-          <a href="#" class="modal-link" id="modal-link" target="_blank" rel="noopener noreferrer">
-            View Project&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+          <div class="modal-links">
+            <a href="#" class="modal-link" id="modal-link">
+              View Project Details&nbsp;<i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#" class="modal-link secondary" id="modal-github-link" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github"></i>&nbsp;View on GitHub
+            </a>
+          </div>
         </div>
       </div>
     </div>
