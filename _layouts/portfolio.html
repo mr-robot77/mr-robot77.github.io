@@ -240,11 +240,14 @@
               <i class="fa-solid fa-code section-icon"></i>
               <h2>Technical Skills</h2>
             </div>
-            <div class="skills-list">
+            <div class="skills-grid">
               {% for skill in site.data.skills %}
-              <div class="skill-item">
-                <div class="skill-category">{{ skill.category }}</div>
-                <div class="skill-items">
+              <div class="skill-group-card">
+                <div class="skill-group-header" style="background: {{ skill.color | default: 'var(--pf-accent)' }};">
+                  <i class="{{ skill.icon | default: 'fa-solid fa-tag' }}"></i>
+                  <span>{{ skill.category }}</span>
+                </div>
+                <div class="skill-group-body">
                   {% assign items = skill.items | split: ", " %}
                   {% for item in items %}
                   <span class="skill-tag">{{ item }}</span>
