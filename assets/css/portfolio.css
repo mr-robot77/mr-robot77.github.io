@@ -922,9 +922,11 @@ header img.profile-photo {
 @media (max-width: 900px) {
   .section-nav {
     flex-direction: row;
+    flex-wrap: wrap;
   }
   .nav-tab {
     flex: 1;
+    min-width: calc(33.33% - 4px);
     justify-content: center;
   }
   .cards-container {
@@ -933,17 +935,142 @@ header img.profile-photo {
 }
 
 @media (max-width: 600px) {
-  .section-card {
-    padding: 20px 16px 24px;
+  /* Prevent horizontal overflow */
+  body, .wrapper {
+    overflow-x: hidden;
   }
+
+  .section-card {
+    padding: 18px 14px 22px;
+  }
+
+  .section-header h2 {
+    font-size: 1.15em;
+  }
+
   .cards-container {
     grid-template-columns: 1fr;
   }
-  .modal-body {
-    padding: 18px 18px 22px;
+
+  /* Nav tabs: 3-per-row on medium-small screens */
+  .section-nav {
+    gap: 3px;
   }
+
+  .nav-tab {
+    min-width: calc(33.33% - 3px);
+    font-size: 0.8em;
+    padding: 8px 6px;
+    gap: 5px;
+  }
+
+  /* Modal responsiveness */
+  .modal-overlay {
+    padding: 10px;
+    align-items: flex-end;
+  }
+
+  .modal-container {
+    max-height: 90vh;
+    border-radius: var(--pf-radius) var(--pf-radius) 0 0;
+  }
+
+  .modal-preview {
+    height: 150px;
+  }
+
+  .modal-body {
+    padding: 16px 14px 20px;
+  }
+
+  .modal-title {
+    font-size: 1.05em;
+  }
+
+  .modal-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .modal-link {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Skills grid single column */
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Education and experience layout */
+  .education-item,
+  .experience-item {
+    gap: 10px;
+  }
+
+  .education-header,
+  .experience-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .education-years,
+  .experience-dates {
+    white-space: normal;
+    align-self: flex-start;
+  }
+
+  /* Gallery single column on mobile */
+  .modal-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  /* Back to top button position */
+  .back-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
+    font-size: 1em;
+  }
+
+  /* Profile photo sizing on mobile */
+  header img.profile-photo {
+    width: 90px;
+    height: 90px;
+    margin: 6px 0 10px;
+  }
+
+  /* Social icons on mobile */
+  .social-icons {
+    gap: 10px;
+  }
+
+  .social-icons a {
+    width: 36px;
+    height: 36px;
+    font-size: 1.05em;
+  }
+}
+
+@media (max-width: 400px) {
+  /* Nav tabs: icon + very short text, 2 per row on tiny screens */
+  .nav-tab {
+    min-width: calc(50% - 3px);
+    font-size: 0.76em;
+    padding: 7px 4px;
+  }
+
+  .nav-tab i {
+    font-size: 0.95em;
+  }
+
+  .section-card {
+    padding: 14px 10px 18px;
+  }
+
+  .modal-overlay {
+    padding: 6px;
   }
 }
 
@@ -959,5 +1086,28 @@ header img.profile-photo {
   div.wrapper > footer {
     position: relative;
     bottom: auto;
+  }
+}
+
+/* ---------- Mobile header alignment ---------- */
+@media screen and (max-width: 960px) {
+  div.wrapper > header {
+    text-align: center;
+  }
+
+  header img.profile-photo {
+    margin: 6px auto 10px;
+  }
+
+  .job-titles {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .section-nav {
+    margin-top: 14px;
   }
 }
