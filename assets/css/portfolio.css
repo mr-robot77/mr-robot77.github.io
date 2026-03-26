@@ -562,6 +562,13 @@
   margin-bottom: 2px;
 }
 
+.modal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
 .modal-link {
   display: inline-flex;
   align-items: center;
@@ -580,6 +587,14 @@
 .modal-link:hover {
   background: var(--pf-accent-dark);
   transform: translateY(-1px);
+}
+
+.modal-link.secondary {
+  background: #6b7280;
+}
+
+.modal-link.secondary:hover {
+  background: #4b5563;
 }
 
 /* ---------- Profile photo override ---------- */
@@ -643,14 +658,15 @@ header img.profile-photo {
 /* ---------- Back to Top Button ---------- */
 .back-to-top {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
   background: var(--pf-accent);
   color: #fff;
   border: none;
+  border-radius: 50%;
+  font-size: 1.2em;
   cursor: pointer;
   display: none;
   align-items: center;

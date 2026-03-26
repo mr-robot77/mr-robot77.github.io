@@ -6,7 +6,8 @@ I'm a curious and passionate problem solver — a **Data Scientist** with experi
 
 ### Education
 
-- **MSc. Statistics & Data Science** — Hasselt University, Belgium (2024–2027)
+- **MSc. Statistics & Data Science**
+  Hasselt University, Belgium (2024-2027)
 
 ### Skills
 
