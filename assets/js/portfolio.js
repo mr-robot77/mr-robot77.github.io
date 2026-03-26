@@ -200,6 +200,15 @@
         /* View project link */
         document.getElementById('modal-link').href = data.url || '#';
 
+        /* GitHub link */
+        var githubLink = document.getElementById('modal-github-link');
+        if (data.github_url) {
+          githubLink.href = data.github_url;
+          githubLink.style.display = 'inline-flex';
+        } else {
+          githubLink.style.display = 'none';
+        }
+
         /* Open */
         modal.classList.add('open');
         document.body.style.overflow = 'hidden';
