@@ -4,13 +4,6 @@ layout: portfolio
 
 I'm a curious and passionate problem solver — a **Data Scientist** with experience in AI/ML Engineering, Data Analysis, and Data Engineering. I have strong skills in data analysis, machine learning, and visualization, backed by solid programming knowledge.
 
-### Skills
-
-- Python, R, SQL
-- Machine Learning & Deep Learning
-- Data Visualization
-- Natural Language Processing (NLP)
-
 ### Interests
 
 - Artificial Intelligence
