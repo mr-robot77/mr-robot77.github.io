@@ -1,0 +1,183 @@
+/* ============================================================
+   project.css — Individual project detail page styles
+   ============================================================ */
+
+/* ---------- Project page body ---------- */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ---------- Back link ---------- */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--pf-font);
+  font-size: 0.85em;
+  font-weight: 500;
+  color: var(--pf-accent);
+  text-decoration: none;
+  transition: gap var(--pf-transition), color var(--pf-transition);
+  margin-bottom: 4px;
+}
+
+.back-link:hover {
+  color: var(--pf-accent-dark);
+  gap: 10px;
+  text-decoration: none;
+}
+
+/* ---------- Project header banner ---------- */
+.project-header {
+  width: 100%;
+  height: 220px;
+  border-radius: var(--pf-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: var(--pf-shadow);
+}
+
+.project-header-img {
+  max-height: 100%;
+  max-width: 80%;
+  object-fit: contain;
+  padding: 16px;
+}
+
+/* ---------- Meta card ---------- */
+.project-meta-card,
+.project-details-card,
+.project-gallery-card,
+.project-body-card {
+  background: var(--pf-card);
+  border-radius: var(--pf-radius);
+  padding: 24px 28px;
+  box-shadow: var(--pf-shadow);
+}
+
+.project-meta-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.project-date {
+  font-family: var(--pf-font);
+  font-size: 0.8em;
+  color: var(--pf-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.project-page-title {
+  font-family: var(--pf-font);
+  font-size: 1.45em;
+  font-weight: 700;
+  color: var(--pf-text);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.project-page-desc {
+  font-family: var(--pf-font);
+  font-size: 0.92em;
+  line-height: 1.75;
+  color: var(--pf-text);
+  margin-bottom: 16px;
+}
+
+.project-page-actions {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ---------- Section titles ---------- */
+.project-section-title {
+  font-family: var(--pf-font);
+  font-size: 1em;
+  font-weight: 700;
+  color: var(--pf-text);
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--pf-border);
+}
+
+.project-section-title i {
+  color: var(--pf-accent);
+}
+
+/* ---------- Details list ---------- */
+.project-details-list li {
+  font-size: 0.88em !important;
+  color: var(--pf-text) !important;
+  line-height: 1.75 !important;
+}
+
+/* ---------- Gallery ---------- */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.project-gallery-img {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  background: var(--pf-bg);
+  border: 1px solid var(--pf-border);
+  border-radius: var(--pf-radius-sm);
+  padding: 8px;
+  box-shadow: var(--pf-shadow);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-gallery-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* ---------- Body card (markdown content) ---------- */
+.project-body-card {
+  font-family: var(--pf-font);
+  font-size: 0.92em;
+  line-height: 1.75;
+  color: var(--pf-text);
+}
+
+.project-body-card h2,
+.project-body-card h3 {
+  font-family: var(--pf-font);
+  font-weight: 700;
+  color: var(--pf-text);
+  margin-top: 22px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .project-header {
+    height: 160px;
+  }
+  .project-meta-card,
+  .project-details-card,
+  .project-gallery-card,
+  .project-body-card {
+    padding: 18px 16px;
+  }
+  .project-page-title {
+    font-size: 1.2em;
+  }
+}

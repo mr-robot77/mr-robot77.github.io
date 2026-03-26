@@ -593,6 +593,103 @@ header img.profile-photo {
   margin: 8px 0 12px;
 }
 
+/* ---------- Job Titles ---------- */
+.job-titles {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 10px;
+  font-family: var(--pf-font);
+  font-size: 0.82em;
+  font-weight: 500;
+  color: var(--pf-muted);
+}
+
+.job-sep {
+  color: var(--pf-border);
+}
+
+/* ---------- Social Links ---------- */
+.social-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--pf-bg);
+  border: 1.5px solid var(--pf-border);
+  color: var(--pf-muted);
+  font-size: 1em;
+  text-decoration: none;
+  transition: background var(--pf-transition), color var(--pf-transition), border-color var(--pf-transition), transform var(--pf-transition);
+}
+
+.social-link:hover {
+  background: var(--pf-accent);
+  border-color: var(--pf-accent);
+  color: #fff;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* ---------- Back to Top Button ---------- */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--pf-accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  box-shadow: 0 4px 14px rgba(78, 101, 253, 0.4);
+  transition: background var(--pf-transition), transform var(--pf-transition), opacity var(--pf-transition);
+  z-index: 9000;
+  opacity: 0;
+}
+
+.back-to-top.visible {
+  display: flex;
+  opacity: 1;
+}
+
+.back-to-top:hover {
+  background: var(--pf-accent-dark);
+  transform: translateY(-3px);
+}
+
+/* ---------- Modal secondary GitHub link ---------- */
+.modal-link-github {
+  background: #24292f;
+  margin-left: 8px;
+}
+
+.modal-link-github:hover {
+  background: #1b1f23;
+}
+
+/* Modal action row */
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
 /* ---------- Responsive tweaks ---------- */
 @media (max-width: 900px) {
   .section-nav {
