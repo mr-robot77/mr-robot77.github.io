@@ -242,12 +242,12 @@
             </div>
             <div class="skills-grid">
               {% for skill in site.data.skills %}
-              <div class="skill-group-card">
+              <div class="skill-group-card collapsed">
                 <button
                   type="button"
                   class="skill-group-header"
                   style="background: {{ skill.color | default: 'var(--pf-accent)' }};"
-                  aria-expanded="true"
+                  aria-expanded="false"
                   aria-controls="skill-group-body-{{ forloop.index }}"
                 >
                   <i class="{{ skill.icon | default: 'fa-solid fa-tag' }}"></i>
