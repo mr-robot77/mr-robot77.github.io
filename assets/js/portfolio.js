@@ -342,8 +342,9 @@
         if (!card || !toggle) return;
 
         var collapsed = card.classList.toggle('collapsed');
-        toggle.innerHTML        = collapsed ? '&#43;' : '&#8722;';
-        toggle.setAttribute('aria-expanded', String(!collapsed));
+        toggle.innerHTML = collapsed ? '&#43;' : '&#8722;';
+        toggle.setAttribute('aria-label', collapsed ? 'Expand skill group' : 'Collapse skill group');
+        header.setAttribute('aria-expanded', String(!collapsed));
       });
     });
 
