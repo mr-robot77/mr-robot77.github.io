@@ -333,6 +333,21 @@
     }
 
     /* =====================================================
+       Skill Group Minimize / Expand Toggle
+    ===================================================== */
+    document.querySelectorAll('.skill-group-header').forEach(function (header) {
+      header.addEventListener('click', function (e) {
+        var card   = header.closest('.skill-group-card');
+        var toggle = header.querySelector('.skill-toggle');
+        if (!card || !toggle) return;
+
+        var collapsed = card.classList.toggle('collapsed');
+        toggle.innerHTML        = collapsed ? '&#43;' : '&#8722;';
+        toggle.setAttribute('aria-expanded', String(!collapsed));
+      });
+    });
+
+    /* =====================================================
        Back to Top Button
     ===================================================== */
     var backToTopBtn = document.getElementById('back-to-top');

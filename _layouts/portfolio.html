@@ -246,6 +246,7 @@
                 <div class="skill-group-header" style="background: {{ skill.color | default: 'var(--pf-accent)' }};">
                   <i class="{{ skill.icon | default: 'fa-solid fa-tag' }}"></i>
                   <span>{{ skill.category }}</span>
+                  <button class="skill-toggle" aria-label="Toggle skill group" aria-expanded="true">&#8722;</button>
                 </div>
                 <div class="skill-group-body">
                   {% assign items = skill.items | split: ", " %}

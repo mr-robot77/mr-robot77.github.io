@@ -813,12 +813,46 @@
   font-size: 0.82em;
   font-weight: 700;
   letter-spacing: 0.3px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .skill-group-header i {
   font-size: 1em;
   opacity: 0.92;
   flex-shrink: 0;
+}
+
+.skill-group-header span {
+  flex: 1;
+}
+
+.skill-toggle {
+  margin-left: auto;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--pf-transition);
+  padding: 0;
+}
+
+.skill-toggle:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.skill-group-card.collapsed .skill-group-body {
+  display: none;
 }
 
 .skill-group-body {
