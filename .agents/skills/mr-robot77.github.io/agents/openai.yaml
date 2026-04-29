@@ -1,0 +1,6 @@
+interface:
+  display_name: "Mr Robot77.github.io"
+  short_description: "Repo-specific patterns and workflows for mr-robot77.github.io"
+  default_prompt: "Use the mr-robot77.github.io repo skill to follow existing architecture, testing, and workflow conventions."
+policy:
+  allow_implicit_invocation: true
