@@ -252,7 +252,7 @@
                 >
                   <i class="{{ skill.icon | default: 'fa-solid fa-tag' }}"></i>
                   <span>{{ skill.category }}</span>
-                  <span class="skill-toggle" aria-hidden="true">&#8722;</span>
+                  <span class="skill-toggle" aria-hidden="true">+</span>
                 </button>
                 <div id="skill-group-body-{{ forloop.index }}" class="skill-group-body">
                   {% assign items = skill.items | split: ", " %}
