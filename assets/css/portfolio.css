@@ -851,6 +851,11 @@
   background: rgba(255, 255, 255, 0.45);
 }
 
+.skill-toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  background: rgba(255, 255, 255, 0.45);
+}
 .skill-group-card.collapsed .skill-group-body {
   display: none;
 }
