@@ -1,0 +1,389 @@
+# Instincts generated from https://github.com/mr-robot77/mr-robot77.github.io
+# Generated: 2026-04-29T14:05:21.307Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: mr-robot77.github.io-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: feat, fix
+
+## Evidence
+
+- 2 commits analyzed
+- Detected conventional commit pattern
+- Examples: feat: add minimize/expand toggle to each skill group card, fix: improve accessibility for skill toggle button
+
+---
+id: mr-robot77.github.io-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Commit Length
+
+## Action
+
+Write moderate-length commit messages (~54 characters)
+
+## Evidence
+
+- Average commit message length: 54 chars
+- Based on 2 commits
+
+---
+id: mr-robot77.github.io-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: mr-robot77.github.io-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: mr-robot77.github.io-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: mr-robot77.github.io-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: mr-robot77.github.io-workflow-feature-enhancement-with-ui-update
+trigger: "when doing feature enhancement with ui update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Workflow Feature Enhancement With Ui Update
+
+## Action
+
+Follow the feature-enhancement-with-ui-update workflow:
+1. Update the relevant HTML layout file to add or modify UI structure.
+2. Modify or add CSS to style the new or changed UI elements.
+3. Update or write JavaScript to implement interactivity or logic for the feature.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: _layouts/portfolio.html, assets/css/portfolio.css, assets/js/portfolio.js
+
+---
+id: mr-robot77.github.io-workflow-ui-accessibility-or-bugfix
+trigger: "when doing ui accessibility or bugfix"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Workflow Ui Accessibility Or Bugfix
+
+## Action
+
+Follow the ui-accessibility-or-bugfix workflow:
+1. Update the relevant HTML layout file to improve markup or accessibility attributes.
+2. Modify JavaScript logic to enhance accessibility or fix bugs.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: _layouts/portfolio.html, assets/js/portfolio.js
+
+---
+id: mr-robot77.github.io-instinct-file-naming-camelCase
+trigger: "When creating or renaming a JavaScript file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Instinct File Naming CamelCase
+
+## Action
+
+Name the file using camelCase (e.g., portfolioSkills.js)
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+- Observed in assets/js/portfolio.js
+
+---
+id: mr-robot77.github.io-instinct-function-naming-camelCase
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase (e.g., toggleSkillGroup)
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+- Seen in assets/js/portfolio.js
+
+---
+id: mr-robot77.github.io-instinct-class-naming-PascalCase
+trigger: "When defining a new class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase (e.g., SkillGroupCard)
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: mr-robot77.github.io-instinct-constant-naming-SCREAMING_SNAKE_CASE
+trigger: "When declaring a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Instinct Constant Naming SCREAMING_SNAKE_CASE
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE (e.g., MAX_SKILL_GROUPS)
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: mr-robot77.github.io-instinct-import-style-relative
+trigger: "When importing modules in JavaScript"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Instinct Import Style Relative
+
+## Action
+
+Use relative import paths (e.g., './utils.js')
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+- Seen in assets/js/portfolio.js
+
+---
+id: mr-robot77.github.io-instinct-export-style-named
+trigger: "When exporting functions or variables from a module"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Instinct Export Style Named
+
+## Action
+
+Use named exports (e.g., export { myFunction })
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: mr-robot77.github.io-instinct-test-location-separate
+trigger: "When adding or updating tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Instinct Test Location Separate
+
+## Action
+
+Place test files in a separate directory from source files
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation
+
+---
+id: mr-robot77.github.io-instinct-commit-format-conventional
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Instinct Commit Format Conventional
+
+## Action
+
+Use conventional commit prefixes (e.g., 'feat:', 'fix:') followed by a concise description
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Examples: 'feat: add minimize/expand toggle to each skill group card'
+
+---
+id: mr-robot77.github.io-instinct-commit-length-medium
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Instinct Commit Length Medium
+
+## Action
+
+Keep the commit message around 54 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength
+
+---
+id: mr-robot77.github.io-instinct-feature-enhancement-ui-update
+trigger: "When someone wants to add or enhance a UI feature in the portfolio section"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Instinct Feature Enhancement Ui Update
+
+## Action
+
+Update '_layouts/portfolio.html' for structure, 'assets/css/portfolio.css' for styles, and 'assets/js/portfolio.js' for logic, following the workflow steps
+
+## Evidence
+
+- Workflow: feature-enhancement-with-ui-update
+- Files involved: _layouts/portfolio.html, assets/css/portfolio.css, assets/js/portfolio.js
+
+---
+id: mr-robot77.github.io-instinct-ui-accessibility-bugfix
+trigger: "When someone wants to fix a bug or improve accessibility for an existing UI component"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: mr-robot77/mr-robot77.github.io
+---
+
+# Mr Robot77.github.io Instinct Ui Accessibility Bugfix
+
+## Action
+
+Update '_layouts/portfolio.html' to improve markup/accessibility and 'assets/js/portfolio.js' to enhance accessibility or fix bugs
+
+## Evidence
+
+- Workflow: ui-accessibility-or-bugfix
+- Files involved: _layouts/portfolio.html, assets/js/portfolio.js
+
