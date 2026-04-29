@@ -243,12 +243,20 @@
             <div class="skills-grid">
               {% for skill in site.data.skills %}
               <div class="skill-group-card">
-                <div class="skill-group-header" style="background: {{ skill.color | default: 'var(--pf-accent)' }};" aria-expanded="true">
+                <div
+                  class="skill-group-header"
+                  style="background: {{ skill.color | default: 'var(--pf-accent)' }};"
+                  role="button"
+                  tabindex="0"
+                  aria-expanded="true"
+                  aria-controls="skill-group-body-{{ forloop.index }}"
+                  onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }"
+                >
                   <i class="{{ skill.icon | default: 'fa-solid fa-tag' }}"></i>
                   <span>{{ skill.category }}</span>
-                  <button class="skill-toggle" aria-label="Collapse skill group">&#8722;</button>
+                  <button type="button" class="skill-toggle" aria-label="Collapse skill group">&#8722;</button>
                 </div>
-                <div class="skill-group-body">
+                <div id="skill-group-body-{{ forloop.index }}" class="skill-group-body">
                   {% assign items = skill.items | split: ", " %}
                   {% for item in items %}
                   <span class="skill-tag">{{ item }}</span>
