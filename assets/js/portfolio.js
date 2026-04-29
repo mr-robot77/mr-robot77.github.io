@@ -335,35 +335,20 @@
     /* =====================================================
        Skill Group Minimize / Expand Toggle
     ===================================================== */
-    document.querySelectorAll('.skill-group-header').forEach(function (header, index) {
+    document.querySelectorAll('.skill-group-header').forEach(function (header) {
       var card   = header.closest('.skill-group-card');
       var toggle = header.querySelector('.skill-toggle');
-      var body   = card ? card.querySelector('.skill-group-body') : null;
-      if (!card || !toggle || !body) return;
-
-      if (!body.id) {
-        body.id = 'skill-group-body-' + index;
-      }
+      if (!card || !toggle) return;
 
       function updateSkillGroupState() {
         var expanded = !card.classList.contains('collapsed');
-        toggle.innerHTML = expanded ? '&#8722;' : '&#43;';
-        toggle.setAttribute('aria-label', expanded ? 'Collapse skill group' : 'Expand skill group');
-        toggle.setAttribute('aria-expanded', String(expanded));
-        toggle.setAttribute('aria-controls', body.id);
+        toggle.textContent = expanded ? '−' : '+';
+        header.setAttribute('aria-expanded', String(expanded));
       }
 
       updateSkillGroupState();
 
-      header.addEventListener('click', function (e) {
-        if (e.target === toggle) return;
-        card.classList.toggle('collapsed');
-        updateSkillGroupState();
-      });
-
-      toggle.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
+      header.addEventListener('click', function () {
         card.classList.toggle('collapsed');
         updateSkillGroupState();
       });

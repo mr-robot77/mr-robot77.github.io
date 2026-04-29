@@ -815,6 +815,16 @@
   letter-spacing: 0.3px;
   cursor: pointer;
   user-select: none;
+  width: 100%;
+  border: none;
+  text-align: left;
+  border-radius: 0;
+}
+
+.skill-group-header:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+  box-shadow: 0 0 0 4px rgba(78, 101, 253, 0.35);
 }
 
 .skill-group-header i {
@@ -823,7 +833,7 @@
   flex-shrink: 0;
 }
 
-.skill-group-header span {
+.skill-group-header span:not(.skill-toggle) {
   flex: 1;
 }
 
@@ -831,7 +841,6 @@
   margin-left: auto;
   flex-shrink: 0;
   background: rgba(255, 255, 255, 0.25);
-  border: none;
   color: #fff;
   width: 22px;
   height: 22px;
@@ -839,23 +848,16 @@
   font-size: 1em;
   font-weight: 700;
   line-height: 1;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background var(--pf-transition);
-  padding: 0;
 }
 
-.skill-toggle:hover {
+.skill-group-header:hover .skill-toggle {
   background: rgba(255, 255, 255, 0.45);
 }
 
-.skill-toggle:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-  background: rgba(255, 255, 255, 0.45);
-}
 .skill-group-card.collapsed .skill-group-body {
   display: none;
 }
