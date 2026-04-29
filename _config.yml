@@ -1,11 +1,11 @@
 title: Saleh Abednezhad # your name (or website title) here
 logo: "/images/profile-photo.jpg?raw=true" # your photo (or logo) here
-job_title: "Data Scientist | Data Analyst | AI/ML Engineer | Data Engineer | BI Analyst"
+job_title: "Data Scientist | AI/ML/Data Engineer | Data/BI Analyst"
 linkedin_url: "https://www.linkedin.com/in/saleh-abdnjd"
 github_url: "https://github.com/mr-robot77"
 description: > # your text below (remove <br> elements if you don't need line breaks)
   <div class="job-titles">
-    Data Scientist | Data Analyst | AI/ML Engineer | Data Engineer | BI Analyst
+    Data Scientist | AI/ML/Data Engineer | Data/BI Analyst
   </div>
   <br>
   <div class="social-icons">
