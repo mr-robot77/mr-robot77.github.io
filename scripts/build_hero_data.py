@@ -168,8 +168,8 @@ def build(raw):
     ema_start = dates[SPAN - 1]
     aria_label = (
         f"Line chart of Bitcoin daily closing prices from {plain_date(dates[0])} "
-        f"to {plain_date(dates[-1])}. The solid line is the daily close. "
-        f"The dashed line is the 44-day exponential moving average, "
+        f"to {plain_date(dates[-1])}. The solid mint line is the daily close. "
+        f"The dashed coral line is the 44-day exponential moving average, "
         f"which starts on {plain_date(ema_start)} after a 44-day warmup. "
         f"Close began at {money(closes[0])} and ended at {money(closes[-1])}. "
         f"The lowest close was {money(closes[lo_index])} on {plain_date(dates[lo_index])} "
@@ -177,6 +177,7 @@ def build(raw):
     )
     summary = (
         f"{short_date(dates[0])} to {short_date(dates[-1])}. "
+        f"The solid mint line is the close and the dashed coral line is the 44-day EMA. "
         f"Close began at {money(closes[0])} and ended at {money(closes[-1])}. "
         f"Low {money(closes[lo_index])} on {short_date(dates[lo_index])}. "
         f"High {money(closes[hi_index])} on {short_date(dates[hi_index])}. "

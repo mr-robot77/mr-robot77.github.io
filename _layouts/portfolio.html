@@ -17,8 +17,18 @@ layout: default
       {% endif %}
       <p class="job-title">{{ site.job_title }}</p>
     </div>
-    <h1 id="hero-heading">{{ site.data.site.hero_headline }}</h1>
-    <div class="prose hero-prose">
+    <h1 id="hero-heading">
+      {% assign headline = site.data.site.hero_headline %}
+      {% assign accent = site.data.site.hero_accent %}
+      {% if accent != blank and headline contains accent %}
+        {% assign head_parts = headline | split: accent %}
+        {% capture head_tail %}{% for part in head_parts offset:1 %}{% unless forloop.first %}{{ accent }}{% endunless %}{{ part }}{% endfor %}{% endcapture %}
+        {{ head_parts | first | escape }}<em>{{ accent | escape }}</em>{{ head_tail | escape }}
+      {% else %}
+        {{ headline | escape }}
+      {% endif %}
+    </h1>
+    <div class="lead">
       {{ content }}
     </div>
     <div class="hero-actions">
@@ -51,7 +61,7 @@ layout: default
       <p class="chart-summary">{{ site.data.hero.summary }}</p>
     </figcaption>
     <noscript>
-      <p>The close and EMA lines need JavaScript. The figures are in the text under the chart.</p>
+      <p>The solid mint close and the dashed coral EMA need JavaScript. The figures are in the text under the chart.</p>
     </noscript>
   </figure>
 </section>
@@ -136,6 +146,16 @@ layout: default
 
 <section class="section" id="skills">
   <h2>Skills</h2>
+  <div class="interests">
+    <h3>Interests</h3>
+    <ul>
+      <li>Artificial intelligence</li>
+      <li>Stocks and cryptocurrency</li>
+      <li>Data science and large datasets</li>
+      <li>Pattern recognition</li>
+      <li>Databases</li>
+    </ul>
+  </div>
   <div class="skill-list">
     {% for skill in site.data.skills %}
     <div class="skill-group">

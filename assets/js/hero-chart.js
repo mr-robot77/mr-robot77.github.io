@@ -104,8 +104,8 @@
       svg.removeChild(svg.firstChild);
     }
 
-    var closeColor = token("--text", "#F4F1EA");
-    var emaColor = token("--mint", "#5EEAD4");
+    var closeColor = token("--mint", "#5EEAD4");
+    var emaColor = token("--coral", "#FF8A6B");
     var group = element("g", { fill: "none", "stroke-width": "2.5", "stroke-linejoin": "round", "stroke-linecap": "round" });
 
     var closePath = element("path", {

@@ -9,3 +9,4 @@
 - Removed the Google Analytics placeholder, Google Fonts, and the Font Awesome CDN.
 - Removed unused template files: `sample_page.md`, `images/dummy_thumbnail.jpg`, `pdf/sample_presentation.pdf`.
 - No CV file is in the repo, so there is no Download CV link. `a.cv-link:hover` still thickens the underline.
+- Hero keeps the portrait, headline, one lead sentence, and primary button. Interests sit in Skills. `hero_accent` marks the first matching word in coral italic. The close is a solid mint line and the 44-day EMA is dashed coral.
