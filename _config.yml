@@ -1,23 +1,27 @@
-title: Saleh Abednezhad # your name (or website title) here
-logo: "/images/profile-photo.jpg?raw=true" # your photo (or logo) here
+title: Saleh Abednezhad
+logo: "/images/profile-photo.jpg"
 job_title: "Data Scientist | AI/ML/Data Engineer | Data/BI Analyst"
 linkedin_url: "https://www.linkedin.com/in/saleh-abdnjd"
 github_url: "https://github.com/mr-robot77"
-description: > # your text below (remove <br> elements if you don't need line breaks)
-  <div class="job-titles">
-    Data Scientist | AI/ML/Data Engineer | Data/BI Analyst
-  </div>
-  <br>
-  <div class="social-icons">
-    <a href="https://www.linkedin.com/in/saleh-abdnjd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/mr-robot77" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-      <i class="fab fa-github"></i>
-    </a>
-  </div>
-  
-remote_theme: pages-themes/minimal@v0.2.0
+description: "Data scientist. Machine learning, data analysis, and data engineering."
+url: "https://mr-robot77.github.io"
+baseurl: ""
+lang: en
+author: Saleh Abednezhad
+social:
+  name: Saleh Abednezhad
+  links:
+    - "https://www.linkedin.com/in/saleh-abdnjd"
+    - "https://github.com/mr-robot77"
 plugins:
-- jekyll-remote-theme
-google_analytics: UA-000000-0 # your Google Analytics tracking ID here
+  - jekyll-seo-tag
+exclude:
+  - BRIDGE.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts
+  - vendor
+  - README.md
+  - CHANGELOG.md
+markdown: kramdown
+permalink: pretty

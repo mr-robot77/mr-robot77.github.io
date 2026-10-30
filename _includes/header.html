@@ -1,0 +1,21 @@
+{% assign home = "/" | relative_url %}
+<header class="site-header">
+  <a class="site-name" href="{{ home }}">{{ site.title }}</a>
+  <nav class="site-nav" aria-label="Sections">
+    <ul>
+      <li><a href="{% if page.url == "/" %}#about{% else %}{{ home }}#about{% endif %}">About</a></li>
+      <li><a href="{% if page.url == "/" %}#work{% else %}{{ home }}#work{% endif %}">Work</a></li>
+      <li><a href="{% if page.url == "/" %}#experience{% else %}{{ home }}#experience{% endif %}">Experience</a></li>
+      <li><a href="{% if page.url == "/" %}#education{% else %}{{ home }}#education{% endif %}">Education</a></li>
+      <li><a href="{% if page.url == "/" %}#skills{% else %}{{ home }}#skills{% endif %}">Skills</a></li>
+    </ul>
+  </nav>
+  <ul class="site-links">
+    <li>
+      <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a>
+    </li>
+    <li>
+      <a href="{{ site.github_url }}" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
+    </li>
+  </ul>
+</header>
