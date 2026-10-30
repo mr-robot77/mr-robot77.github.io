@@ -1,0 +1,5 @@
+# Homepage headline. Replace this line to change it.
+hero_headline: "Finding the signal in the noise"
+# First occurrence of this word in the headline is shown in coral italic.
+# Leave it blank to render the headline as plain text.
+hero_accent: "signal"
